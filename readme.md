@@ -1,3 +1,5 @@
+Jenkins: [![Build Status](http://jenkins.adjective.xyz/buildStatus/icon?job=adjective-laravel)](http://jenkins.adjective.xyz/job/adjective-laravel/)
+
 # laravel-jenkins
 
 Boilerplate for setting up continuous integration of [Laravel 4](http://www.laravel.com/) using [Jenkins](http://www.jenkins-ci.org)

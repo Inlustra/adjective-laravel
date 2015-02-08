@@ -42,5 +42,5 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-jshint');
 
 // Register the default tasks.
-    grunt.registerTask('default', ['watch','compass']);
+    grunt.registerTask('default', ['compass']);
 };

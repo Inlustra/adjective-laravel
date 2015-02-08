@@ -9,7 +9,7 @@
     </head>
     <body>
         @section('sidebar')
-        <ul id="slide-out" class="side-nav fixed">
+         <ul id="slide-out" class="side-nav fixed">
          <li id="logo">
          <div  class="valign-wrapper">
                <a href="#!"><h4 class="logo-title">Adjective</h4></a>
@@ -24,13 +24,36 @@
            <li class="no-padding">
              <ul class="collapsible collapsible-accordion">
                <li>
-                 <div class="collapsible-header">Dropdown<i class="mdi-navigation-arrow-drop-down"></i></div>
+                 <div class="collapsible-header">Courses<i class="mdi-navigation-arrow-drop-down"></i></div>
                  <div class="collapsible-body">
                    <ul>
-                     <li><a href="#!">First Dropdown Link</a></li>
-                     <li><a href="#!">Second Dropdown Link</a></li>
-                     <li><a href="#!">Third Dropdown Link</a></li>
-                     <li><a href="#!">Fourth Dropdown Link</a></li>
+                     <li>
+                        <a href="#!">
+                            <div class="item">
+                                Enterprise Web Development
+                                <div class="subtitle">
+                                COMP-1642
+                                </div>
+                            </div>
+                        </a>
+                     </li>
+                     <li>
+                         <a href="#!">
+                             <div class="item">
+                                 Final Year Project
+                             </div>
+                         </a>
+                     </li>
+                     <li>
+                         <a href="#!">
+                             <div class="item">
+                                  Advanced Programming
+                                  <div class="subtitle">
+                                  COMP-4941
+                                  </div>
+                             </div>
+                         </a>
+                     </li>
                    </ul>
                  </div>
                </li>
@@ -45,9 +68,8 @@
         @yield('post-load')
 
         <script>
-          $(".button-collapse").sideNav({edge: 'left'});
-
-  $('.collapsible').collapsible();
+            $(".button-collapse").sideNav({edge: 'left'});
+            $('.collapsible').collapsible();
         </script>
     </body>
 </html>

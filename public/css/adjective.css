@@ -5,6 +5,18 @@ html {
     clear:both;
 }
 
+.item {
+    clear:both;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.subtitle {
+    font-size: smaller;
+    margin-top: -50px;
+    float:right;
+}
+
 #logo {
     border-bottom: thick solid #40c4ff;
 }

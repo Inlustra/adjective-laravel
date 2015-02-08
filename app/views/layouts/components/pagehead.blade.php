@@ -1,7 +1,3 @@
-<?php
-/**
- * Created by PhpStorm.
- * User: Tom
- * Date: 08/02/2015
- * Time: 20:16
- */ 
+<div class="col s12">
+  <div class="valign-wrapper light-blue lighten-1"><h3 class="valign">{{$text}}</h3></div>
+</div>

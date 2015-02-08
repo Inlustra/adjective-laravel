@@ -7,8 +7,6 @@ body {
 }
 /* Small Screens (coincides with MaterializeCSS' queries) */
 @media (max-width: 992px) {
-    .sidebar {
-    }
 }
 
 /* Medium Screens (coincides with MaterializeCSS' queries) */
@@ -61,8 +59,6 @@ and (max-width:992px) {
     color:black;
     margin-bottom: 5px;
     min-height: 50px;
-    line-height: 50px;
-    font-size: large;
 }
 
 .sidebar ul li a{
@@ -85,7 +81,6 @@ and (max-width:992px) {
 .sidebar .collapsible .item {
     margin-left:30px;
     margin-right:30px;
-    clear:both;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -94,7 +89,6 @@ and (max-width:992px) {
     margin-left:20px;
     margin-right:20px;
     font-size: smaller;
-    margin-top: -30px;
     float:right;
     color:#888;
 }

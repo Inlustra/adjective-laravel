@@ -18,16 +18,6 @@
                  <div class="collapsible-body">
                    <ul>
                      <li>
-                        <a href="#!">
-                            <div class="item">
-                                Enterprise Web Development
-                                <div class="subtitle">
-                                COMP-1642
-                                </div>
-                            </div>
-                        </a>
-                     </li>
-                     <li>
                          <a href="#!">
                              <div class="item">
                                  Final Year Project
@@ -35,12 +25,22 @@
                          </a>
                      </li>
                      <li>
+                        <a href="#!">
+                            <div class="item">
+                                Enterprise Web Development
+                            </div>
+                            <div class="subtitle">
+                                COMP-1642
+                            </div>
+                        </a>
+                     </li>
+                     <li>
                          <a href="#!">
                              <div class="item">
                                   Advanced Programming
-                                  <div class="subtitle">
-                                  COMP-4941
-                                  </div>
+                             </div>
+                             <div class="subtitle">
+                                COMP-4941
                              </div>
                          </a>
                      </li>

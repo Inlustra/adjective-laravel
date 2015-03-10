@@ -80,6 +80,24 @@ $user->lastname = $lastname
 $user->password = Hash::make('test');
 $user->save();
 
+$firstname = 'Keeran';
+$lastname = 'Jamil';
+$user = new User;
+$user->username = $firstname.'.'.$lastname;
+$user->firstname = $firstname
+$user->lastname = $lastname
+$user->password = Hash::make('test');
+$user->save();
+
+$firstname = 'Ray';
+$lastname = 'Stoneham';
+$user = new User;
+$user->username = $firstname.'.'.$lastname;
+$user->firstname = $firstname
+$user->lastname = $lastname
+$user->password = Hash::make('test');
+$user->save();
+
 $firstNames = ['Idell','Wilbert','Neda','Harriet','Theo',
 'Ashly','Debi','Lois','Kristal','Nicki',
 'Vincenzo','Laurinda','Annmarie','Nakia',

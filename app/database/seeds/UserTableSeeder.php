@@ -33,7 +33,7 @@ class UserTableSeeder extends Seeder {
     		$lastname = $lastNames[array_rand($lastNames)];
     		
 		$user = new User;
-		$user->username = '$firstname.'.'.$lastname;
+		$user->username = $firstname.'.'.$lastname;
 		$user->firstname = $firstname
 		$user->lastname = $lastname
 		$user->password = Hash::make('test');

@@ -11,7 +11,7 @@ class DegreeTableSeeder extends Seeder {
    {
 $degree = new Degree;
 $degree->name = 'Computing';
-$degree->Director = '7';
+$degree->Director = '9';
 $degree->save();
 }
 }

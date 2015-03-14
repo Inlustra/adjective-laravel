@@ -68,9 +68,6 @@ class User extends Eloquent implements UserInterface, RemindableInterface
 
     public function scopeStudentsOnCourseLike($query, $course)
     {
-        if (!is_numeric($course)) {
-            $course = $course->id;
-        }
         return $query->whereHas('student', function ($query) use ($course) {
             $query->whereHas('courses', function ($query) use ($course) {
                 $query->where('name', 'LIKE', '%'.$course.'%');
@@ -80,7 +77,6 @@ class User extends Eloquent implements UserInterface, RemindableInterface
 
     public function scopeStudentsOnDegree($query, $degree)
     {
-
         if (!is_numeric($degree)) {
             $degree = $degree->id;
         }
@@ -93,10 +89,6 @@ class User extends Eloquent implements UserInterface, RemindableInterface
 
     public function scopeStudentsOnDegreeLike($query, $degree)
     {
-
-        if (!is_numeric($degree)) {
-            $degree = $degree->id;
-        }
         return $query->whereHas('student', function ($query) use ($degree) {
             $query->whereHas('degree', function ($query) use ($degree) {
                 $query->where('name', 'LIKE', '%'.$degree.'%');

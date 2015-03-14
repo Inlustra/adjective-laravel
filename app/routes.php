@@ -28,7 +28,6 @@ Route::get('users/students/course/{type}', function ($type) {
 
 Route::get('users/students/degree/{type}', function ($type) {
     if(!is_numeric($type)) {
-        echo "cacssca";
         return User::studentsOnDegreeLike($type)->get();
     }
     return User::studentsOnDegree($type)->get();

@@ -82,7 +82,7 @@ class User extends Eloquent implements UserInterface, RemindableInterface
         }
         return $query->whereHas('student', function ($query) use ($degree) {
             $query->whereHas('degree', function ($query) use ($degree) {
-                $query->where('id', '=', '%'.$degree.'%');
+                $query->where('id', '=', $degree);
             });
         })->with(array('student', 'student.degree', 'student.courses'));;
     }

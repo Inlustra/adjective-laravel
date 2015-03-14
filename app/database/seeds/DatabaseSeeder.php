@@ -12,6 +12,11 @@ class DatabaseSeeder extends Seeder {
 		Eloquent::unguard();
 
 		$this->call('UserTableSeeder');
+        $this->call('StaffTableSeeder');
+        $this->call('StudentTableSeeder');
+        $this->call('User_StaffTableSeeder');
+        $this->call('CourseTableSeeder');
+        $this->call('Student_CourseTableSeeder');
 	}
 
 }

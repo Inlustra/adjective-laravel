@@ -1,17 +1,19 @@
 <?php
-class StaffTableSeeder extends Seeder {
-/**
-* Run the database seeds.
-*
-* @return void
-*/
-public function run()
+
+class StaffTableSeeder extends Seeder
 {
-$name = 'Lecturer';
-$role = 'LECTURER';
-$staff = new Staff;
-$staff->name = $name;
-$staff->role = $role;
-$staff->save();
-}
+    /**
+     * Run the database seeds.
+     *
+     * @return void
+     */
+    public function run()
+    {
+        $name = 'Lecturer';
+        $role = 'LECTURER';
+        $staff = new Staff;
+        $staff->name = $name;
+        $staff->role = $role;
+        $staff->save();
+    }
 }

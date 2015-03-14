@@ -29,7 +29,7 @@ class User extends Eloquent implements UserInterface, RemindableInterface
 
     public function scopeStaff($query)
     {
-        return $query->has('staffRoles');
+        return $query->has('staffRoles')->with('staffRoles');
     }
 
     public function scopeStaffLike($query, $type)

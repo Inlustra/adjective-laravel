@@ -27,7 +27,6 @@ class StudentTableSeeder extends Seeder
         $user = User::find(3);
         $student = $user->student();
         $graduating = '2015/07/12';
-        $student = new Student;
         $student->degree = $degree->id;
         $student->graduating = $graduating;
         $student->save();

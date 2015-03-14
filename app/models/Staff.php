@@ -12,6 +12,8 @@ class Staff extends Eloquent
     protected $table = 'Staff';
     public $timestamps = false;
 
+    protected $hidden = array('pivot', 'id');
+
     public function users()
     {
         return $this->belongsToMany('User', 'User_Staff', 'Staff', 'User')->withTimestamps();;

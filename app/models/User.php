@@ -27,14 +27,14 @@ class User extends Eloquent implements UserInterface, RemindableInterface
         return $this->hasOne('Student', 'User');
     }
 
-    public function scopeStaffMembers($query)
+    public function scopeStaff($query)
     {
-        return $query->has('staffRoles');
+        return $query->has('staffRoles')->with(array('staff'));
     }
 
     public function scopeStudents($query)
     {
-        return $query->has('student');
+        return $query->has('student')->with(array('student', 'student.degree', 'student.courses'));
     }
 
     public function scopeStudentsOnCourse($query, $course)
@@ -43,8 +43,17 @@ class User extends Eloquent implements UserInterface, RemindableInterface
             $query->whereHas('courses', function ($query) use ($course) {
                 $query->where('id', '=', $course->id);
             });
-        });
+        })->with(array('student', 'student.degree', 'student.courses'));
     }
+
+    public function scopeStudentsOnDegree($query, $degree)
+{
+    return $query->whereHas('student', function ($query) use ($degree) {
+        $query->whereHas('degree', function ($query) use ($degree) {
+            $query->where('id', '=', $degree->id);
+        })->with(array('student', 'student.degree', 'student.courses'));
+    });
+}
 
     /**
      * The attributes excluded from the model's JSON form.

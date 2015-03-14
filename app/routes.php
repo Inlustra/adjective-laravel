@@ -12,13 +12,25 @@
 |
 */
 
-Route::get('/', function()
-{
-	return View::make('index');
+Route::get('/', function () {
+    return View::make('index');
 });
-Route::get('/test', function()
-{
-    $course = Course::find(1);
-    $students = User::studentOnCourse($course)->get();
+Route::get('users/students', function () {
+    $students = User::students()->get();
+    return $students;
+});
+
+Route::get('users/students/course/{id}', function ($id) {
+    $students = User::studentsOnCourse($id)->get();
+    return $students;
+});
+
+Route::get('users/', function() {
+    $users = User::all();
+    return $users;
+});
+
+Route::get('users/staff', function () {
+    $students = User::staff()->get();
     return $students;
 });

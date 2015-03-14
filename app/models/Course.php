@@ -10,16 +10,20 @@ class Course extends Eloquent
      */
     protected $table = 'Course';
 
+    protected $hidden = array('pivot');
+
     public function director()
     {
         return $this->belongsTo('User', 'Director');
     }
 
-    public function deadlines() {
-        return $this->hasMany('Deadline','Course');
+    public function deadlines()
+    {
+        return $this->hasMany('Deadline', 'Course');
     }
 
-    public function students() {
+    public function students()
+    {
         return $this->belongsToMany('Student', 'Student_Course', 'Course', 'Student');
     }
 

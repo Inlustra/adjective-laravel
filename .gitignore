@@ -54,3 +54,6 @@ vendor/
 /bootstrap/compiled.php
 .env.*.php
 .env.php
+/app/storage/logs/*
+/app/storage/cache/*
+/app/storage/sessions/*

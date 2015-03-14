@@ -21,14 +21,14 @@ Route::get('users/students', function () {
 
 Route::get('users/students/course/{type}', function ($type) {
     if(!is_numeric($type)) {
-        return User::staffOnCourseLike($type)->get();
+        return User::studentsOnCourseLike($type)->get();
     }
     return User::studentsOnCourse($type)->get();
 });
 
 Route::get('users/students/degree/{type}', function ($type) {
     if(!is_numeric($type)) {
-        return User::staffOnDegreeLike($type)->get();
+        return User::studentsOnDegreeLike($type)->get();
     }
     return User::studentsOnDegree($type)->get();
 });

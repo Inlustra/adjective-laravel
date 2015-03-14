@@ -39,21 +39,28 @@ class User extends Eloquent implements UserInterface, RemindableInterface
 
     public function scopeStudentsOnCourse($query, $course)
     {
+        if (!is_numeric($course)) {
+            $course = $course->id;
+        }
         return $query->whereHas('student', function ($query) use ($course) {
             $query->whereHas('courses', function ($query) use ($course) {
-                $query->where('id', '=', $course->id);
+                $query->where('id', '=', $course);
             });
         })->with(array('student', 'student.degree', 'student.courses'));
     }
 
     public function scopeStudentsOnDegree($query, $degree)
-{
-    return $query->whereHas('student', function ($query) use ($degree) {
-        $query->whereHas('degree', function ($query) use ($degree) {
-            $query->where('id', '=', $degree->id);
-        })->with(array('student', 'student.degree', 'student.courses'));
-    });
-}
+    {
+
+        if (!is_numeric($degree)) {
+            $degree = $degree->id;
+        }
+        return $query->whereHas('student', function ($query) use ($degree) {
+            $query->whereHas('degree', function ($query) use ($degree) {
+                $query->where('id', '=', $degree->id);
+            })->with(array('student', 'student.degree', 'student.courses'));
+        });
+    }
 
     /**
      * The attributes excluded from the model's JSON form.

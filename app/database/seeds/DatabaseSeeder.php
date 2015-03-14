@@ -17,8 +17,8 @@ class DatabaseSeeder extends Seeder
         $this->call('DegreeTableSeeder');
         $this->call('CourseTableSeeder');
         $this->call('StudentTableSeeder');
-        $this->call('User_StaffTableSeeder');
-        $this->call('Student_CourseTableSeeder');
+        $this->call('UserStaffTableSeeder');
+        $this->call('StudentCourseTableSeeder');
     }
 
 }

@@ -11,6 +11,7 @@ class UserTableSeeder extends Seeder
     public function run()
     {
 
+        $password = Hash::make('test');
         $firstname = 'Thomas';
         $lastname = 'Nairn';
         $user = new User;
@@ -18,7 +19,76 @@ class UserTableSeeder extends Seeder
         $user->username = $firstname . '.' . $lastname;
         $user->firstname = $firstname;
         $user->lastname = $lastname;
-        $user->password = Hash::make('test');
+        $user->password = $password;
+        $user->save();
+
+        $firstname = 'Lukas';
+        $lastname = 'Bowden';
+        $user = new User;
+        $user->id = '2';
+        $user->username = $firstname . '.' . $lastname;
+        $user->firstname = $firstname;
+        $user->lastname = $lastname;
+        $user->password = $password;
+        $user->save();
+
+        $firstname = 'Daniel';
+        $lastname = 'Bailey';
+        $user = new User;
+        $user->id = '3';
+        $user->username = $firstname . '.' . $lastname;
+        $user->firstname = $firstname;
+        $user->lastname = $lastname;
+        $user->password = $password;
+        $user->save();
+        $firstname = 'Richard';
+        $lastname = 'Barker';
+        $user = new User;
+        $user->id = '4';
+        $user->username = $firstname . '.' . $lastname;
+        $user->firstname = $firstname;
+        $user->lastname = $lastname;
+        $user->password = $password;
+        $user->save();
+
+        $firstname = 'Lee';
+        $lastname = 'Johnson';
+        $user = new User;
+        $user->id = '5';
+        $user->username = $firstname . '.' . $lastname;
+        $user->firstname = $firstname;
+        $user->lastname = $lastname;
+        $user->password = $password;
+        $user->save();
+
+        $firstname = 'Zoe';
+        $lastname = 'Luo';
+        $user = new User;
+        $user->id = '6';
+        $user->username = $firstname . '.' . $lastname;
+        $user->firstname = $firstname;
+        $user->lastname = $lastname;
+        $user->password = $password;
+        $user->save();
+
+        $firstname = 'Igor';
+        $lastname = 'Jendoletov';
+        $user = new User;
+        $user->id = '7';
+        $user->username = $firstname . '.' . $lastname;
+        $user->firstname = $firstname;
+        $user->lastname = $lastname;
+        $user->password = $password;
+        $user->save();
+
+        $firstname = 'David';
+        $lastname = 'Sime';
+        $user = new User;
+        $user->id = '8';
+        $user->username = $firstname . '.' . $lastname;
+        $user->firstname = $firstname;
+        $user->lastname = $lastname;
+        $user->password = $password;
         $user->save();
 
         $firstname = 'Ray';
@@ -28,7 +98,7 @@ class UserTableSeeder extends Seeder
         $user->username = $firstname . '.' . $lastname;
         $user->firstname = $firstname;
         $user->lastname = $lastname;
-        $user->password = Hash::make('test');
+        $user->password = $password;
         $user->save();
 
 
@@ -36,72 +106,10 @@ class UserTableSeeder extends Seeder
         $lastname = 'Jamil';
         $user = new User;
         $user->username = $firstname . '.' . $lastname;
-        $user->id = 10;
+        $user->id = '10';
         $user->firstname = $firstname;
         $user->lastname = $lastname;
-        $user->password = Hash::make('test');
-        $user->save();
-
-        $firstname = 'Lukas';
-        $lastname = 'Bowden';
-        $user = new User;
-        $user->username = $firstname . '.' . $lastname;
-        $user->firstname = $firstname;
-        $user->lastname = $lastname;
-        $user->password = Hash::make('test');
-        $user->save();
-
-        $firstname = 'Daniel';
-        $lastname = 'Bailey';
-        $user = new User;
-        $user->username = $firstname . '.' . $lastname;
-        $user->firstname = $firstname;
-        $user->lastname = $lastname;
-        $user->password = Hash::make('test');
-        $user->save();
-        $firstname = 'Richard';
-        $lastname = 'Barker';
-        $user = new User;
-        $user->username = $firstname . '.' . $lastname;
-        $user->firstname = $firstname;
-        $user->lastname = $lastname;
-        $user->password = Hash::make('test');
-        $user->save();
-
-        $firstname = 'Lee';
-        $lastname = 'Johnson';
-        $user = new User;
-        $user->username = $firstname . '.' . $lastname;
-        $user->firstname = $firstname;
-        $user->lastname = $lastname;
-        $user->password = Hash::make('test');
-        $user->save();
-
-        $firstname = 'Zoe';
-        $lastname = 'Luo';
-        $user = new User;
-        $user->username = $firstname . '.' . $lastname;
-        $user->firstname = $firstname;
-        $user->lastname = $lastname;
-        $user->password = Hash::make('test');
-        $user->save();
-
-        $firstname = 'Igor';
-        $lastname = 'Jendoletov';
-        $user = new User;
-        $user->username = $firstname . '.' . $lastname;
-        $user->firstname = $firstname;
-        $user->lastname = $lastname;
-        $user->password = Hash::make('test');
-        $user->save();
-
-        $firstname = 'David';
-        $lastname = 'Sime';
-        $user = new User;
-        $user->username = $firstname . '.' . $lastname;
-        $user->firstname = $firstname;
-        $user->lastname = $lastname;
-        $user->password = Hash::make('test');
+        $user->password = $password;
         $user->save();
 
         $firstNames = ['Idell', 'Wilbert', 'Neda', 'Harriet', 'Theo',
@@ -122,7 +130,6 @@ class UserTableSeeder extends Seeder
             'Mccann', 'Stevenson', 'Andrews', 'Knox', 'Castillo', 'Villa', 'Rodriguez',
             'Mcbride', 'Valentine', 'Ewing', 'Boyle', 'Kim', 'Brennan', 'Fisher',
             'Espinoza', 'Dickerson', 'Mcdowell'];
-
         for ($x = 0; $x <= 100; $x++) {
 
             $firstname = $firstNames[array_rand($firstNames)];
@@ -131,7 +138,7 @@ class UserTableSeeder extends Seeder
             $user->username = $firstname . '.' . $lastname;
             $user->firstname = $firstname;
             $user->lastname = $lastname;
-            $user->password = Hash::make('test');
+            $user->password = $password;
             $user->save();
 
         }

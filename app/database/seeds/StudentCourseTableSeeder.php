@@ -1,6 +1,6 @@
 <?php
 
-class Student_CourseTableSeeder extends Seeder
+class StudentCourseTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -9,15 +9,15 @@ class Student_CourseTableSeeder extends Seeder
      */
     public function run()
     {
-
-        $user = User::find(1);
         $course = Course::find(1);
-        $user->student()->courses()->attach($course->id,
+
+        $student = User::find(1)->student;
+        $student->courses()->attach($course->id,
             array('Supervisor' => 9, 'SecondMarker' => 10));
 
-        $user = User::find(2);
-        $course = Course::find(1);
-        $user->student()->courses()->attach($course->id,
+
+        $student = User::find(2)->student;
+        $student->courses()->attach($course->id,
             array('Supervisor' => 9, 'SecondMarker' => 10));
     }
 }

@@ -19,5 +19,9 @@ class Course extends Eloquent
         return $this->hasMany('Deadline','Course');
     }
 
+    public function students() {
+        return $this->belongsToMany('Student', 'Student_Course', 'Course', 'Student');
+    }
+
 
 }

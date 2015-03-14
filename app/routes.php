@@ -16,3 +16,9 @@ Route::get('/', function()
 {
 	return View::make('index');
 });
+Route::get('/test', function()
+{
+    $course = Course::find(1);
+    $students = User::studentOnCourse($course)->get();
+    return $students;
+});

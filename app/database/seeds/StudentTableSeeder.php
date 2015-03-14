@@ -15,21 +15,21 @@ class StudentTableSeeder extends Seeder
         $graduating = '2015/07/12';
         $student->degree = $degree->id;
         $student->graduating = $graduating;
-        $student->save();
+        $user->student()->save($student);
 
         $user = User::find(2);
         $student = $user->student();
         $graduating = '2015/07/12';
         $student->degree = $degree->id;
         $student->graduating = $graduating;
-        $student->save();
+        $user->student()->save($student);
 
         $user = User::find(3);
         $student = $user->student();
         $graduating = '2015/07/12';
         $student->degree = $degree->id;
         $student->graduating = $graduating;
-        $student->save();
+        $user->student()->save($student);
 
     }
 }

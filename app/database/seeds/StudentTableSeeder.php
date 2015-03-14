@@ -13,24 +13,24 @@ class StudentTableSeeder extends Seeder
         $user = User::find(1);
         $graduating = '2015/07/12';
         $student = new Student;
-        $student->degree = $degree;
-        $student->user = $user;
+        $student->degree = $degree->id;
+        $student->user = $user->id;
         $student->graduating = $graduating;
         $student->save();
 
         $user = User::find(2);
         $graduating = '2015/07/12';
         $student = new Student;
-        $student->degree = $degree;
-        $student->user = $user;
+        $student->degree = $degree->id;
+        $student->user = $user->id;
         $student->graduating = $graduating;
         $student->save();
 
         $user = User::find(3);
         $graduating = '2015/07/12';
         $student = new Student;
-        $student->degree = $degree;
-        $student->user = $user;
+        $student->degree = $degree->id;
+        $student->user = $user->id;
         $student->graduating = $graduating;
         $student->save();
 

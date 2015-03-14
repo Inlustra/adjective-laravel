@@ -29,14 +29,14 @@ class User extends Eloquent implements UserInterface, RemindableInterface
 
     public function scopeStaff($query)
     {
-        return $query->has('staffRoles')->with(array('staff'));
+        return $query->has('staffRoles');
     }
 
     public function scopeStaffLike($query, $type)
     {
         return $query->whereHas('staffRoles', function ($query) use ($type) {
             $query->where('role', 'LIKE', $type);
-        })->with(array('staff'));
+        })->with('staffRoles');
     }
 
     public function scopeStaffOfType($query, $type)
@@ -46,7 +46,7 @@ class User extends Eloquent implements UserInterface, RemindableInterface
         }
         return $query->whereHas('staffRoles', function ($query) use ($type) {
             $query->where('id', '=', $type);
-        })->with(array('staff'));
+        })->with('staffRoles');
     }
 
     public function scopeStudents($query)

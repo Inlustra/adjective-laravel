@@ -35,7 +35,7 @@ class User extends Eloquent implements UserInterface, RemindableInterface
     public function scopeStaffLike($query, $type)
     {
         return $query->whereHas('staffRoles', function ($query) use ($type) {
-            $query->where('role', 'LIKE', $type);
+            $query->where('role', 'LIKE', '%'.$type.'%');
         })->with('staffRoles');
     }
 
@@ -66,6 +66,18 @@ class User extends Eloquent implements UserInterface, RemindableInterface
         })->with(array('student', 'student.degree', 'student.courses'));
     }
 
+    public function scopeStudentsOnCourseLike($query, $course)
+    {
+        if (!is_numeric($course)) {
+            $course = $course->id;
+        }
+        return $query->whereHas('student', function ($query) use ($course) {
+            $query->whereHas('courses', function ($query) use ($course) {
+                $query->where('name', 'LIKE', '%'.$course.'%');
+            });
+        })->with(array('student', 'student.degree', 'student.courses'));
+    }
+
     public function scopeStudentsOnDegree($query, $degree)
     {
 
@@ -74,7 +86,20 @@ class User extends Eloquent implements UserInterface, RemindableInterface
         }
         return $query->whereHas('student', function ($query) use ($degree) {
             $query->whereHas('degree', function ($query) use ($degree) {
-                $query->where('id', '=', $degree);
+                $query->where('id', '=', '%'.$degree.'%');
+            });
+        })->with(array('student', 'student.degree', 'student.courses'));;
+    }
+
+    public function scopeStudentsOnDegreeLike($query, $degree)
+    {
+
+        if (!is_numeric($degree)) {
+            $degree = $degree->id;
+        }
+        return $query->whereHas('student', function ($query) use ($degree) {
+            $query->whereHas('degree', function ($query) use ($degree) {
+                $query->where('name', 'LIKE', '%'.$degree.'%');
             });
         })->with(array('student', 'student.degree', 'student.courses'));;
     }

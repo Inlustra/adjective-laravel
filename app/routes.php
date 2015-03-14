@@ -16,18 +16,21 @@ Route::get('/', function () {
     return View::make('index');
 });
 Route::get('users/students', function () {
-    $students = User::students()->get();
-    return $students;
+    return User::students()->get();
 });
 
-Route::get('users/students/course/{id}', function ($id) {
-    $students = User::studentsOnCourse($id)->get();
-    return $students;
+Route::get('users/students/course/{type}', function ($type) {
+    if(!is_numeric($type)) {
+        return User::staffOnCourseLike($type)->get();
+    }
+    return User::studentsOnCourse($type)->get();
 });
 
-Route::get('users/students/degree/{id}', function ($id) {
-    $students = User::studentsOnDegree($id)->get();
-    return $students;
+Route::get('users/students/degree/{type}', function ($type) {
+    if(!is_numeric($type)) {
+        return User::staffOnDegreeLike($type)->get();
+    }
+    return User::studentsOnDegree($type)->get();
 });
 
 Route::get('users/', function() {

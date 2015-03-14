@@ -27,6 +27,8 @@ Route::get('users/students/course/{type}', function ($type) {
 });
 
 Route::get('users/students/degree/{type}', function ($type) {
+    echo $type;
+    echo is_numeric($type);
     if(!is_numeric($type)) {
         return User::studentsOnDegreeLike($type)->get();
     }

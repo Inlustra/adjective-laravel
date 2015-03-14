@@ -25,6 +25,11 @@ Route::get('users/students/course/{id}', function ($id) {
     return $students;
 });
 
+Route::get('users/students/degree/{id}', function ($id) {
+    $students = User::studentsOnDegree($id)->get();
+    return $students;
+});
+
 Route::get('users/', function() {
     $users = User::all();
     return $users;

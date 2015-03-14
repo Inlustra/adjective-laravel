@@ -9,8 +9,8 @@ class StudentTableSeeder extends Seeder
      */
     public function run()
     {
-        $degree = '1';
-        $user = '1';
+        $degree = Degree::find(1);
+        $user = User::find(1);
         $graduating = '2015/07/12';
         $student = new Student;
         $student->degree = $degree;
@@ -18,8 +18,7 @@ class StudentTableSeeder extends Seeder
         $student->graduating = $graduating;
         $student->save();
 
-        $degree = '1';
-        $user = '2';
+        $user = User::find(2);
         $graduating = '2015/07/12';
         $student = new Student;
         $student->degree = $degree;
@@ -27,8 +26,7 @@ class StudentTableSeeder extends Seeder
         $student->graduating = $graduating;
         $student->save();
 
-        $degree = '1';
-        $user = '3';
+        $user = User::find(3);
         $graduating = '2015/07/12';
         $student = new Student;
         $student->degree = $degree;

@@ -32,6 +32,23 @@ class User extends Eloquent implements UserInterface, RemindableInterface
         return $query->has('staffRoles')->with(array('staff'));
     }
 
+    public function scopeStaffLike($query, $type)
+    {
+        return $query->whereHas('staffRoles', function ($query) use ($type) {
+            $query->where('role', 'LIKE', $type);
+        })->with(array('staff'));
+    }
+
+    public function scopeStaffOfType($query, $type)
+    {
+        if (!is_numeric($type)) {
+            $type = $type->id;
+        }
+        return $query->whereHas('staffRoles', function ($query) use ($type) {
+            $query->where('id', '=', $type);
+        })->with(array('staff'));
+    }
+
     public function scopeStudents($query)
     {
         return $query->has('student')->with(array('student', 'student.degree', 'student.courses'));
@@ -57,9 +74,9 @@ class User extends Eloquent implements UserInterface, RemindableInterface
         }
         return $query->whereHas('student', function ($query) use ($degree) {
             $query->whereHas('degree', function ($query) use ($degree) {
-                $query->where('id', '=', $degree->id);
-            })->with(array('student', 'student.degree', 'student.courses'));
-        });
+                $query->where('id', '=', $degree);
+            });
+        })->with(array('student', 'student.degree', 'student.courses'));;
     }
 
     /**

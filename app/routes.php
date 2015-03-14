@@ -11,6 +11,7 @@
 | and give it the Closure to execute when that URI is requested.
 |
 */
+Route::pattern('id', '[0-9]+');
 
 Route::get('/', function () {
     return View::make('index');
@@ -37,5 +38,15 @@ Route::get('users/', function() {
 
 Route::get('users/staff', function () {
     $students = User::staff()->get();
+    return $students;
+});
+
+Route::get('users/staff/{type}', function ($type) {
+    $students = User::staffLike($type)->get();
+    return $students;
+});
+
+Route::get('users/staff/{id}', function ($id) {
+    $students = User::staffOfType($id)->get();
     return $students;
 });

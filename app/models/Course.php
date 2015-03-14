@@ -8,7 +8,7 @@ class Course extends Eloquent
      *
      * @var string
      */
-    protected $table = 'course';
+    protected $table = 'Course';
 
     public function director()
     {

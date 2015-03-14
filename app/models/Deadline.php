@@ -7,7 +7,7 @@ class Deadline extends Eloquent
      *
      * @var string
      */
-    protected $table = 'deadline';
+    protected $table = 'Deadline';
 
     public function course()
     {

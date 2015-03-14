@@ -7,7 +7,7 @@ class Degree extends Eloquent{
      *
      * @var string
      */
-    protected $table = 'degree';
+    protected $table = 'Degree';
 
     public function director() {
         return $this->belongsTo('User', 'Director');

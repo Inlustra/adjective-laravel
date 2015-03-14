@@ -9,7 +9,7 @@ class Student extends Eloquent {
      *
      * @var string
      */
-    protected $table = 'student';
+    protected $table = 'Student';
 
     public function user() {
         return $this->belongsTo('User','User');

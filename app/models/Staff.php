@@ -9,11 +9,11 @@ class Staff extends Eloquent
      *
      * @var string
      */
-    protected $table = 'staff';
+    protected $table = 'Staff';
 
     public function users()
     {
-        return $this->belongsToMany('User', 'user_staff', 'Staff', 'User');
+        return $this->belongsToMany('User', 'User_Staff', 'Staff', 'User');
     }
 
 

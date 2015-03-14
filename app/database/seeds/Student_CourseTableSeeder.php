@@ -9,26 +9,15 @@ class Student_CourseTableSeeder extends Seeder
      */
     public function run()
     {
-        $course = '1';
-        $student = '1';
-        $supervisor = '9';
-        $secondmarker = '10';
-        $student_course = new Student_Course;
-        $student_course->Course = $course;
-        $student_course->Student = $student;
-        $student_course->Supervisor = $supervisor;
-        $student_course->SecondMarker = $secondmarker;
-        $student_course->save();
 
-        $course = '1';
-        $student = '2';
-        $supervisor = '9';
-        $secondmarker = '10';
-        $student_course = new Student_Course;
-        $student_course->Course = $course;
-        $student_course->Student = $student;
-        $student_course->Supervisor = $supervisor;
-        $student_course->SecondMarker = $secondmarker;
-        $student_course->save();
+        $user = User::find(1);
+        $course = Course::find(1);
+        $user->student()->courses()->attach($course->id,
+            array('Supervisor' => 9, 'SecondMarker' => 10));
+
+        $user = User::find(2);
+        $course = Course::find(1);
+        $user->student()->courses()->attach($course->id,
+            array('Supervisor' => 9, 'SecondMarker' => 10));
     }
 }

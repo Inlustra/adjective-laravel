@@ -10,10 +10,11 @@ class Staff extends Eloquent
      * @var string
      */
     protected $table = 'Staff';
+    public $timestamps = false;
 
     public function users()
     {
-        return $this->belongsToMany('User', 'User_Staff', 'Staff', 'User');
+        return $this->belongsToMany('User', 'User_Staff', 'Staff', 'User')->withTimestamps();;
     }
 
 

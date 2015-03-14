@@ -8,6 +8,7 @@ class Degree extends Eloquent{
      * @var string
      */
     protected $table = 'Degree';
+    public $timestamps = false;
 
     public function director() {
         return $this->belongsTo('User', 'Director');

@@ -16,6 +16,6 @@ class Student extends Eloquent {
     }
 
     public function courses() {
-        return $this->belongsToMany('Course', 'student_course', 'Course', 'Student');
+        return $this->belongsToMany('Course', 'Student_Course', 'Course', 'Student');
     }
 }

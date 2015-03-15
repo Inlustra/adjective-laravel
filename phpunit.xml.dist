@@ -17,10 +17,8 @@
     </testsuites>
     <filter>
         <whitelist>
-            <whitelist processUncoveredFilesFromWhitelist="true">
-                <directory suffix=".php">app/models</directory>
-                <directory suffix=".php">app/controllers</directory>
-            </whitelist>
+            <directory suffix=".php">app/models</directory>
+            <directory suffix=".php">app/controllers</directory>
         </whitelist>
     </filter>
     <logging>

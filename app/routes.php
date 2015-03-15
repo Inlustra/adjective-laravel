@@ -15,6 +15,9 @@
 Route::get('/', function () {
     return View::make('index');
 });
+
+
+
 Route::get('users/students', function () {
     return User::students()->get();
 });
@@ -49,5 +52,9 @@ Route::get('users/staff/{type}', function ($type) {
     }
     $students = User::staffLike($type)->get();
     return $students;
+});
+
+Route::get('users/{name}', function($name) {
+    return User::named($name)->get();
 });
 

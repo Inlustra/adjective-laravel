@@ -27,6 +27,19 @@ class User extends Eloquent implements UserInterface, RemindableInterface
         return $this->hasOne('Student', 'User');
     }
 
+    public function scopeNamed($query, $name)
+    {
+        $query = $query->where('firstname', 'LIKE', $name)
+            ->where('lastname', 'LIKE', $name, 'OR');
+        $names = explode(' ', $name);
+        foreach ($names as $name) {
+            $query = $query->where('firstname', 'LIKE', $name)
+                ->where('lastname', 'LIKE', $name, 'OR');
+        }
+        return $query;
+
+    }
+
     public function scopeStaff($query)
     {
         return $query->has('staffRoles')->with('staffRoles');
@@ -35,7 +48,7 @@ class User extends Eloquent implements UserInterface, RemindableInterface
     public function scopeStaffLike($query, $type)
     {
         return $query->whereHas('staffRoles', function ($query) use ($type) {
-            $query->where('role', 'LIKE', '%'.$type.'%');
+            $query->where('role', 'LIKE', '%' . $type . '%');
         })->with('staffRoles');
     }
 
@@ -70,7 +83,7 @@ class User extends Eloquent implements UserInterface, RemindableInterface
     {
         return $query->whereHas('student', function ($query) use ($course) {
             $query->whereHas('courses', function ($query) use ($course) {
-                $query->where('name', 'LIKE', '%'.$course.'%');
+                $query->where('name', 'LIKE', '%' . $course . '%');
             });
         })->with(array('student', 'student.degree', 'student.courses'));
     }
@@ -91,7 +104,7 @@ class User extends Eloquent implements UserInterface, RemindableInterface
     {
         return $query->whereHas('student', function ($query) use ($degree) {
             $query->whereHas('degree', function ($query) use ($degree) {
-                $query->where('name', 'LIKE', '%'.$degree.'%');
+                $query->where('name', 'LIKE', '%' . $degree . '%');
             });
         })->with(array('student', 'student.degree', 'student.courses'));;
     }

@@ -8,8 +8,8 @@
         @show
     </head>
     <body>
-            <div class="sidebar">
-                @include('layouts.sidebar')
+            <div class="nav-wrapper">
+                @include('layouts.topbar')
             </div>
             <div class="content">
                 <div class="inner-content">

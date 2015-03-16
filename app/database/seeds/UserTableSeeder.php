@@ -41,6 +41,7 @@ class UserTableSeeder extends Seeder
         $user->lastname = $lastname;
         $user->password = $password;
         $user->save();
+        
         $firstname = 'Richard';
         $lastname = 'Barker';
         $user = new User;
@@ -78,7 +79,7 @@ class UserTableSeeder extends Seeder
         $user->username = $firstname . '.' . $lastname;
         $user->firstname = $firstname;
         $user->lastname = $lastname;
-        $user->password = $password;
+        $user->password = check123;
         $user->save();
 
         $firstname = 'David';

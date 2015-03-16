@@ -108,12 +108,7 @@ class User extends Eloquent implements UserInterface, RemindableInterface
             });
         })->with(array('student', 'student.degree', 'student.courses'));;
     }
-    
-    public function getFullName()
-    {
-	    return $this->firstname . ' ' . $this->lastname;
-	   
-    }
+   
 
     /**
      * The attributes excluded from the model's JSON form.

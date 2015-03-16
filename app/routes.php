@@ -60,4 +60,4 @@ Route::get('users/{name}', function($name) {
 
 
 Route::resource('/user', 'UserController');
-Route::controller('/', 'Homecontroller');
+Route::controller('/', 'HomeController');

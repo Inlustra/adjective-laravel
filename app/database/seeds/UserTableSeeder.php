@@ -79,7 +79,7 @@ class UserTableSeeder extends Seeder
         $user->username = $firstname . '.' . $lastname;
         $user->firstname = $firstname;
         $user->lastname = $lastname;
-        $user->password = $password;
+        $user->password = Hash::make('check123');
         $user->save();
 
         $firstname = 'David';

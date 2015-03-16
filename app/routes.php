@@ -58,3 +58,6 @@ Route::get('users/{name}', function($name) {
     return User::named($name)->get();
 });
 
+
+Route::resource('/user', 'UserController');
+Route::controller('/', 'Homecontroller');

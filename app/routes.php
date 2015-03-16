@@ -12,51 +12,57 @@
 |
 */
 
+Route::group(array('domain' => 'api.adjective.xyz'), function () {
+
+    Route::get('/', function () {
+        $user = User::named("Nairn")->get()->first();
+        $user->message = "Hi guys, I'm Tom.";
+        return $user;
+    });
+
+    Route::get('users/students', function () {
+        return User::students()->get();
+    });
+
+    Route::get('users/students/course/{type}', function ($type) {
+        if (!is_numeric($type)) {
+            return User::studentsOnCourseLike($type)->get();
+        }
+        return User::studentsOnCourse($type)->get();
+    });
+
+    Route::get('users/students/degree/{type}', function ($type) {
+        if (!is_numeric($type)) {
+            return User::studentsOnDegreeLike($type)->get();
+        }
+        return User::studentsOnDegree($type)->get();
+    });
+
+    Route::get('users/', function () {
+        return User::all();
+    });
+
+    Route::get('users/staff', function () {
+        return User::staff()->get();
+    });
+
+    Route::get('users/staff/{type}', function ($type) {
+        if (is_numeric($type)) {
+            return User::staffOfType($type)->get();
+        }
+        return User::staffLike($type)->get();
+    });
+
+    Route::get('users/{name}', function ($name) {
+        return User::named($name)->get();
+    });
+    Route::get('users/{name}/conversation', function ($name) {
+        return Conversation::withUser(User::named($name)->get()->first())->get();
+    });
+});
+
 Route::get('/', function () {
-    $user = User::named("Nairn")->get()->first();
-    $user2 = User::named("Stoneham")->get()->first();
-    return Conversation::between(array($user->id,$user2))->get();
     return View::make('login.index');
-});
-
-Route::get('api/users/students', function () {
-    return User::students()->get();
-});
-
-Route::get('api/users/students/course/{type}', function ($type) {
-    if(!is_numeric($type)) {
-        return User::studentsOnCourseLike($type)->get();
-    }
-    return User::studentsOnCourse($type)->get();
-});
-
-Route::get('api/users/students/degree/{type}', function ($type) {
-    if(!is_numeric($type)) {
-        return User::studentsOnDegreeLike($type)->get();
-    }
-    return User::studentsOnDegree($type)->get();
-});
-
-Route::get('api/users/', function() {
-    return User::all();
-});
-
-Route::get('api/users/staff', function () {
-    return User::staff()->get();
-});
-
-Route::get('api/users/staff/{type}', function ($type) {
-    if(is_numeric($type)) {
-        return User::staffOfType($type)->get();
-    }
-    return User::staffLike($type)->get();
-});
-
-Route::get('api/users/{name}', function($name) {
-    return User::named($name)->get();
-});
-Route::get('api/users/{name}/conversation', function($name) {
-    return Conversation::withUser(User::named($name)->get()->first())->get();
 });
 
 

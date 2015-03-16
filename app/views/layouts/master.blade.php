@@ -20,7 +20,7 @@
         {{ HTML::script('js/bin/materialize.min.js'); }}
         @yield('post-load')
         <script>
-            $(".button-collapse").sideNav({edge: 'left'});
+			$(".button-collapse").sideNav();
             $('.collapsible').collapsible();
         </script>
     </body>

@@ -5070,7 +5070,7 @@ nav {
 
 .navbar-fixed {
   position: relative;
-  height: 56px;
+  height: 36px;
   z-index: 998; }
   .navbar-fixed nav {
     position: fixed; }
@@ -5084,7 +5084,7 @@ nav {
     font-size: 2rem; }
 
   .navbar-fixed {
-    height: 64px; }
+    height: 36px; }
  }
 
 @font-face {

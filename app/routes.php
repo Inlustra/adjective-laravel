@@ -65,5 +65,5 @@ Route::get('/', function () {
 });
 
 
-Route::resource('/user', 'UserController');
+Route::get('/user', ['as' => 'user.dashboard', 'before' => 'auth', 'uses' => 'UserController@getDashboard']);
 Route::controller('/', 'HomeController');

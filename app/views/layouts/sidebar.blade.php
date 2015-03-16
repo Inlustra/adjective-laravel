@@ -35,6 +35,7 @@
 
 <br>
 
+@if(Auth::user()->isStaff())
 <ul class="collapsible" data-collapsible="expandable">
     <li>
       	<div class="collapsible-header"><i class="mdi-av-my-library-books"></i>Administration</div>
@@ -43,6 +44,7 @@
       	<div class="collapsible-body"><p>Something</p></div>
     </li>
 </ul>
+@endif
 
 <br>
 

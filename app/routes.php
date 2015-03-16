@@ -16,45 +16,40 @@ Route::get('/', function () {
     return View::make('login.index');
 });
 
-
-
-Route::get('users/students', function () {
+Route::get('api/users/students', function () {
     return User::students()->get();
 });
 
-Route::get('users/students/course/{type}', function ($type) {
+Route::get('api/users/students/course/{type}', function ($type) {
     if(!is_numeric($type)) {
         return User::studentsOnCourseLike($type)->get();
     }
     return User::studentsOnCourse($type)->get();
 });
 
-Route::get('users/students/degree/{type}', function ($type) {
+Route::get('api/users/students/degree/{type}', function ($type) {
     if(!is_numeric($type)) {
         return User::studentsOnDegreeLike($type)->get();
     }
     return User::studentsOnDegree($type)->get();
 });
 
-Route::get('users/', function() {
-    $users = User::all();
-    return $users;
+Route::get('api/users/', function() {
+    return User::all();
 });
 
-Route::get('users/staff', function () {
-    $students = User::staff()->get();
-    return $students;
+Route::get('api/users/staff', function () {
+    return User::staff()->get();
 });
 
-Route::get('users/staff/{type}', function ($type) {
+Route::get('api/users/staff/{type}', function ($type) {
     if(is_numeric($type)) {
         return User::staffOfType($type)->get();
     }
-    $students = User::staffLike($type)->get();
-    return $students;
+    return User::staffLike($type)->get();
 });
 
-Route::get('users/{name}', function($name) {
+Route::get('api/users/{name}', function($name) {
     return User::named($name)->get();
 });
 

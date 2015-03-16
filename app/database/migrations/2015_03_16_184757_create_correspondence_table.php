@@ -16,10 +16,8 @@ class CreateCorrespondenceTable extends Migration {
             $table->increments('id');
             $table->unsignedInteger('Sender');
             $table->foreign('Sender')->references('id')->on('User');
-            $table->unsignedInteger('Receiver');
-            $table->foreign('Receiver')->references('id')->on('User');
-            $table->unsignedInteger('Course');
-            $table->foreign('Course')->references('id')->on('Course');
+            $table->unsignedInteger('Conversation');
+            $table->foreign('Conversation')->references('id')->on('Conversation');
             $table->text('message');
             $table->timestamps();
         });

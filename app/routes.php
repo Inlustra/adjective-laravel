@@ -13,6 +13,9 @@
 */
 
 Route::get('/', function () {
+    $user = User::named("Nairn")->get()->first();
+    $user2 = User::named("Stoneham")->get()->first();
+    return Conversation::between(array($user->id,$user2))->get();
     return View::make('login.index');
 });
 
@@ -51,6 +54,9 @@ Route::get('api/users/staff/{type}', function ($type) {
 
 Route::get('api/users/{name}', function($name) {
     return User::named($name)->get();
+});
+Route::get('api/users/{name}/conversation', function($name) {
+    return Conversation::withUser(User::named($name)->get()->first())->get();
 });
 
 

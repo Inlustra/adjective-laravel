@@ -10,6 +10,13 @@ class User extends Eloquent implements UserInterface, RemindableInterface
 
     use UserTrait, RemindableTrait;
 
+
+    /**
+     * The attributes excluded from the model's JSON form.
+     *
+     * @var array
+     */
+    protected $hidden = array('password', 'remember_token','pivot');
     /**
      * The database table used by the model.
      *
@@ -17,9 +24,20 @@ class User extends Eloquent implements UserInterface, RemindableInterface
      */
     protected $table = 'User';
 
+
+    public function conversations()
+    {
+        return $this->hasMany('Correspondence','Sender')->orderBy('created_at');
+    }
+
+    public function receivedMessages()
+    {
+        return $this->hasMany('Correspondence','Receiver')->orderBy('created_at');
+    }
+
     public function staffRoles()
     {
-        return $this->belongsToMany('Staff', 'User_Staff', 'User', 'Staff')->withTimestamps();;
+        return $this->belongsToMany('Staff', 'User_Staff', 'User', 'Staff')->withTimestamps();
     }
 
     public function student()
@@ -52,7 +70,6 @@ class User extends Eloquent implements UserInterface, RemindableInterface
                 ->where('lastname', 'LIKE', $name, 'OR');
         }
         return $query;
-
     }
 
     public function scopeStaff($query)
@@ -124,12 +141,5 @@ class User extends Eloquent implements UserInterface, RemindableInterface
         })->with(array('student', 'student.degree', 'student.courses'));;
     }
 
-
-    /**
-     * The attributes excluded from the model's JSON form.
-     *
-     * @var array
-     */
-    protected $hidden = array('password', 'remember_token');
 
 }

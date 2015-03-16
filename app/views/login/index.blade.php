@@ -24,7 +24,7 @@
 		<div class="row">
 		<div class="input-field col s12">
 		{{ Form::label('username', 'Username') }}
-        {{ Form::text('username', null, ['placeholder' => 'Username', 'class' => 'form-control']) }}
+        {{ Form::text('username', null, ['placeholder' => '', 'class' => 'form-control']) }}
 		</div>
 		</div>
 		</div>
@@ -33,7 +33,7 @@
 		<div class="row">
 		<div class="input-field col s12">
         {{ Form::label('password', 'Password') }}
-        {{ Form::password('password', ['placeholder' => 'Password', 'class' => 'form-control']) }}
+        {{ Form::password('password', ['placeholder' => '', 'class' => 'form-control']) }}
 		</div>
 		</div>
 		</div>

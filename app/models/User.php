@@ -27,6 +27,21 @@ class User extends Eloquent implements UserInterface, RemindableInterface
         return $this->hasOne('Student', 'User');
     }
 
+    public function isStaff()
+    {
+        return count($this->staffRoles->toArray()) != 0;
+    }
+
+    public function isStudent()
+    {
+        return $this->student != null;
+    }
+
+    public function hasRole($check)
+    {
+        return in_array($check, array_fetch($this->staffRoles->toArray(), 'role'));
+    }
+
     public function scopeNamed($query, $name)
     {
         $query = $query->where('firstname', 'LIKE', $name)
@@ -108,7 +123,7 @@ class User extends Eloquent implements UserInterface, RemindableInterface
             });
         })->with(array('student', 'student.degree', 'student.courses'));;
     }
-   
+
 
     /**
      * The attributes excluded from the model's JSON form.

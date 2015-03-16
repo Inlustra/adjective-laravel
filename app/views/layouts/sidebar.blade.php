@@ -36,6 +36,17 @@
 <br>
 
 <ul class="collapsible" data-collapsible="expandable">
+    <li>
+      	<div class="collapsible-header"><i class="mdi-av-my-library-books"></i>Administration</div>
+      	<div class="collapsible-body"><p>View Students</p></div>
+      	<div class="collapsible-body"><p>View Courses</p></div>
+      	<div class="collapsible-body"><p>Something</p></div>
+    </li>
+</ul>
+
+<br>
+
+<ul class="collapsible" data-collapsible="expandable">
 	<li>
 		<div class="collapsible-header active"><i class="mdi-content-backspace"></i>Log Out</div>
 	</li>

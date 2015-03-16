@@ -5,7 +5,7 @@
 @section('content')
  
 
-<h1><i class="fa fa-users"></i> Hello Student</h1>
+<h1><i class="fa fa-users"></i> Hello Stuff member</h1>
  
 
  

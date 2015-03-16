@@ -4,11 +4,11 @@
         @section('header')
           {{ HTML::style('css/materialize.css'); }}
           {{ HTML::style('css/adjective.css'); }}
-          <title>@yield('title','Adjective Laravel')</title>
+          <title>@yield('title','Stuff Landing Page')</title>
         @show
     </head>
     <body>
-            <div class="nav-wrapper">
+            <div class="nav-wrapper-admin">
                 @include('layouts.topbar')
             </div>
 

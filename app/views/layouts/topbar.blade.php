@@ -1,7 +1,13 @@
 <div class="navbar-fixed">
 <nav>
 <div class="nav-wrapper">
-       <a href="#" class="brand-logo">Adjective | Student/Staff</a>
+
+@if(Auth::user()->isStaff())
+       <a href="#" class="brand-logo">Adjective | Staff</a>
+@else
+       <a href="#" class="brand-logo">Adjective | Student</a>       
+       
+@endif                    
        <ul id="nav-mobile" class="right hide-on-med-and-down">
 	   <li>{{ Auth::user()->username }}</li>
        <li><a href="/logout">Logout</a></li>

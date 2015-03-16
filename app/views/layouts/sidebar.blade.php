@@ -6,7 +6,7 @@
 
 <br>
 
-<ul class="collapsible" data-collapsible="expandable">
+<ul class="collapsible" data-collapsible="accordeon">
     <li>
       	<div class="collapsible-header active"><i class="mdi-action-account-circle"></i>Profile</div>
       	<div class="collapsible-body"><p>Edit Profile.</p></div>
@@ -50,6 +50,6 @@
 
 <ul class="collapsible" data-collapsible="expandable">
 	<li>
-		<div class="collapsible-header active"><i class="mdi-content-backspace"></i>Log Out</div>
+		<div class="collapsible-header active"><i class="mdi-content-backspace"></i><a href="/logout">Log Out</a></div>
 	</li>
 </ul>

@@ -27,7 +27,7 @@ class HomeController extends BaseController {
 		
 		if (Auth::attempt(['username' => $username, 'password' => $password]))
 		{
-			return Redirect::intended('/');
+			return Redirect::intended('/user');
 		}
 		
 		return Redirect::back()

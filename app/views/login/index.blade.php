@@ -23,8 +23,8 @@
 		<div class="valign-wrapper">
 		<div class="row">
 		<div class="input-field col s12">
-        <input id="Username" type="text">
-        <label for="username">Username</label>
+		{{ Form::label('username', 'Username') }}
+        {{ Form::text('username', null, ['placeholder' => 'Username', 'class' => 'form-control']) }}
 		</div>
 		</div>
 		</div>
@@ -32,8 +32,8 @@
 		<div class="valign-wrapper">
 		<div class="row">
 		<div class="input-field col s12">
-		<input id="password" type="password">
-		<label for="password">Password</label>
+        {{ Form::label('password', 'Password') }}
+        {{ Form::password('password', ['placeholder' => 'Password', 'class' => 'form-control']) }}
 		</div>
 		</div>
 		</div>

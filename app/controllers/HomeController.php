@@ -17,7 +17,38 @@ class HomeController extends BaseController {
 
 	public function showWelcome()
 	{
-		return View::make('index');
+		return View::make('login.index');
+	}
+	
+	public function postIndex()
+	{
+		$username = Input::get('username');
+		$password = Input::get('password');
+		
+		if (Auth::attempt(['username' => $username, 'password' => $password]))
+		{
+			return Redirect::intended('/');
+		}
+		
+		return Redirect::back()
+			->withInput()
+			->withErrors('Something went wrong.');
+		}
+		
+	public function getLogin()
+	{
+		return Redirect::to('/');
+	}
+	
+	public function getLogout()
+	{
+		Auth::logout();
+		return Redirect::to('/');
+	}
+		
+		
+		
+		}
 	}
 
 }

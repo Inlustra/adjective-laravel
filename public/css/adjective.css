@@ -3,6 +3,9 @@ body {
 }
 /* Small Screens (coincides with MaterializeCSS' queries) */
 @media (max-width: 992px) {
+	.content {
+		margin-left: 0px;
+	}
 }
 
 /* Medium Screens (coincides with MaterializeCSS' queries) */
@@ -17,7 +20,9 @@ and (max-width:992px) {
 
 /* Large Screens (coincides with MaterializeCSS' queries) */
 @media (min-width: 992px) {
-
+	.content {
+		margin-left: 0px;
+	}
 }
 
 /* Medium screens and up (coincides with MaterializeCSS' queries) */
@@ -148,5 +153,5 @@ body {
 }
 
 img.responsive-img {
-  width:200px;
-  height: 200px; }
+  width:150px;
+  height:150px; } 

@@ -3,26 +3,35 @@
 @section('title') Student Landing Page @stop
  
 @section('content')
- 
+  
 <div class="container">
 <div class="row">
-	<div class="col s12"><h3>Igor Jendoletov</h3>
+	<div class="col s12"><h4><i class="small mdi-social-person"></i> {{ Auth::user()->username }}</h4>
 	</div>
 
-	<div class="col s12 m3 12"><blockquote><p>Programme</p><p>Email</p><p>Graduation</p></blockquote>
+	<div class="col s12 m3 12"><blockquote><p><b>Programme</p><p>Email</p><p>Graduation</p></blockquote>
 	</div>
-	<div class="col s12 m6 18"><blockquote><p>Computing</p></blockquote>
+	<div class="col s12 m3 12"><blockquote><p>Computing</p><p>hellou@hello.com</p><p>2015</p></blockquote></b>
 	</div>
-	<div class="col s12 m3 12"><img src="img/me.jpg" class="circle responsive-img" />  
+    <div class="col s12 m6 18">
+    <img src="img/phototest.png" class="circle responsive-img" />
 	</div>
 	</div>
-</div>     
-                     
+</div>
+<br>
+<div class="divider"></div>
+
+<div class="container">
+<div class="row">   
+     <div class="col s12"><h4><i class="small mdi-communication-message"></i> Latest Messages</h4>
+     
+
+     
+             
                             
                             
-                            
-                            
-                            
+     </div>
+</div>                    
                             
 
                        

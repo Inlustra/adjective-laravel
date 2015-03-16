@@ -12,7 +12,7 @@
                 @include('layouts.topbar')
             </div>
 
-            <div class="sidebar sidebar-color">
+            <div class="sidebar">
             	@include('layouts.sidebar')
             </div>
             
@@ -26,7 +26,12 @@
         @yield('post-load')
         <script>
 			$(".button-collapse").sideNav();
-            $('.collapsible').collapsible();
+			$(document).ready(function(){
+				$('.collapsible').collapsible({
+					accordion : false
+    });
+  });
+      
         </script>
     </body>
 </html>

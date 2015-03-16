@@ -4,14 +4,17 @@
         @section('header')
           {{ HTML::style('css/materialize.css'); }}
           {{ HTML::style('css/adjective.css'); }}
-          <title>@yield('title','Stuff Landing Page')</title>
+          <title>@yield('title','Adjective Laravel')</title>
         @show
     </head>
     <body>
-            <div class="nav-wrapper-admin">
-                @include('layouts.topbar')
+            <div class="nav-wrapper">
+                @include('admin.topbar')
             </div>
 
+            <div class="sidebar sidebar-color">
+            	@include('admin.sidebar')
+            </div>
             
             <div class="content">
                 <div class="inner-content">
@@ -23,7 +26,12 @@
         @yield('post-load')
         <script>
 			$(".button-collapse").sideNav();
-            $('.collapsible').collapsible();
+			$(document).ready(function(){
+				$('.collapsible').collapsible({
+					accordion : false
+    });
+  });
+      
         </script>
     </body>
 </html>

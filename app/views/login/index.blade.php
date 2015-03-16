@@ -1,6 +1,6 @@
 @extends('login.master')
           
-@section('title') Adjective @stop
+@section('title') Adjective Login Page @stop
  
 @section('content')
  

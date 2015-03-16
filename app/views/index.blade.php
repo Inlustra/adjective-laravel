@@ -1,11 +1,12 @@
 @extends('layouts.master')
  
-@section('title') Users @stop
+@section('title') Student Landing Page @stop
  
 @section('content')
  
 
 <h1><i class="fa fa-users"></i> Hello Student</h1>
+
  
 
  

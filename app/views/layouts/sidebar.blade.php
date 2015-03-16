@@ -1,52 +1,34 @@
-<ul>
-           <li id="logo">
-           <div class="valign-wrapper">
-             <a href="#!"><h4 class="logo-title">Adjective</h4></a>
-             <div class="valign-wrapper" id="logo-icon">
-               <span class="valign logo-adjective">S</span>
-             </div>
-           </div>
-           <div class="clear"></div>
-           </li>
-           <li><a href="#!">First Sidebar Link</a></li>
-           <li><a href="#!">First Sidebar Link</a></li>
-           <li><a href="#!">Second Sidebar Link</a></li>
-           <li class="no-padding">
-             <ul class="collapsible collapsible-accordion">
-               <li>
-                 <div class="collapsible-header">Courses<i class="mdi-navigation-arrow-drop-down"></i></div>
-                 <div class="collapsible-body">
-                   <ul>
-                     <li>
-                         <a href="#!">
-                             <div class="item">
-                                 Final Year Project
-                             </div>
-                         </a>
-                     </li>
-                     <li>
-                        <a href="#!">
-                            <div class="item">
-                                Enterprise Web Development
-                            </div>
-                            <div class="subtitle">
-                                COMP-1642
-                            </div>
-                        </a>
-                     </li>
-                     <li>
-                         <a href="#!">
-                             <div class="item">
-                                  Advanced Programming
-                             </div>
-                             <div class="subtitle">
-                                COMP-4941
-                             </div>
-                         </a>
-                     </li>
-                   </ul>
-                 </div>
-               </li>
-             </ul>
-           </li>
-        </ul>
+<ul class="collapsible" data-collapsible="expandable">
+    <li>
+      	<div class="collapsible-header active"><i class="mdi-action-home"></i>Home</div>
+    </li>
+</ul>
+
+<br>
+
+<ul class="collapsible" data-collapsible="expandable">
+    <li>
+      	<div class="collapsible-header active"><i class="mdi-action-account-circle"></i>Profile</div>
+      	<div class="collapsible-body"><p>Edit Profile.</p></div>
+     	<div class="collapsible-body"><p>View Uploads.</p></div>
+    </li>
+    <li>
+      	<div class="collapsible-header"><i class="mdi-communication-chat"></i>Communication</div>
+      	<div class="collapsible-body"><p>Dialogue List.</p></div>
+    </li>
+    <li>
+      	<div class="collapsible-header"><i class="mdi-av-my-library-books"></i>Courses</div>
+      	<div class="collapsible-body"><p>COMP1648</p></div>
+      	<div class="collapsible-body"><p>COMP1648</p></div>
+      	<div class="collapsible-body"><p>COMP1648</p></div>
+    </li>
+
+</ul>
+<br>
+<ul class="collapsible" data-collapsible="expandable">
+    <li>
+      	<div class="collapsible-header active"><i class="mdi-action-language"></i>Useful Links</div>
+      	<div class="collapsible-body"><p>Travel and transport.</p></div>
+     	<div class="collapsible-body"><p>Uni Announcements.</p></div>
+    </li>
+</ul>

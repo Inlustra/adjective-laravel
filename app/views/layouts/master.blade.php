@@ -12,6 +12,9 @@
                 @include('layouts.topbar')
             </div>
 
+            <div class="sidebar sidebar-color">
+            	@include('layouts.sidebar')
+            </div>
             
             <div class="content">
                 <div class="inner-content">

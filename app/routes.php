@@ -15,7 +15,7 @@
 Route::group(array('domain' => 'api.adjective.xyz'), function () {
 
     Route::get('/', function () {
-        $user = User::all()->take(10)->get();
+        $user = User::take(10)->get();
         return $user;
     });
 

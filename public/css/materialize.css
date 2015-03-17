@@ -2249,6 +2249,7 @@ td, th {
 
 .secondary-content {
   float: right;
+  margin-bottom: 5px;
   color: #26a69a; }
 
 span.badge {

@@ -19,6 +19,7 @@
 	</div>
 </div>
 <br>
+
 <div class="divider"></div>
 
 <div class="container">
@@ -26,14 +27,14 @@
      <div class="col s12"><h4><i class="small mdi-communication-message"></i> Latest Messages</h4>
 	 <ul class="collection">
 	 <li class="collection-item avatar">
-      <span class="title"><div class="card-panel blue lighten-4">Ray Stoneham</span></div>
+      <span class="title"><div class="card-panel blue lighten-4">Ray Stoneham</div></span>
       <p>Hello, how are u today?
       </p>
       <a href="#!" class="secondary-content"><i class="mdi-content-reply"></i></a>
     </li>
 	 <ul class="collection">
 	 <li class="collection-item avatar">
-      <span class="title"><div class="card-panel blue lighten-4">Keeran Jamil</span>
+      <span class="title"><div class="card-panel blue lighten-4">Keeran Jamil</div></span>
       <p>How is the work on project
       </p>
       <a href="#!" class="secondary-content"><i class="mdi-content-reply"></i></a>
@@ -42,7 +43,13 @@
                             
                             
      </div>
-</div>                    
+</div> 
+
+<br>
+
+<div class="divider"></div>
+
+                   
                             
 
                        

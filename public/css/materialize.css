@@ -5005,7 +5005,9 @@ nav {
     color: #fff;
     display: inline-block;
     font-size: 18;
-    text-align: center;
+        left: 0;
+        width: 100%;
+        text-align: center;
     padding: 0px 0px 0px 0px; }
     @media only screen and (max-width : 992px) {
       nav .brand-logo {

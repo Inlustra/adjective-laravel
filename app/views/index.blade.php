@@ -14,7 +14,7 @@
 	<div class="col s12 m3 12"><blockquote><p>Computing</p><p>hellou@hello.com</p><p>2015</p></blockquote></b>
 	</div>
     <div class="col s12 m6 18">
-    <img src="img/phototest.png" class="circle responsive-img" />
+    <img src="img/user-icon1.jpg" class="circle responsive-img" />
 	</div>
 	</div>
 </div>
@@ -63,7 +63,7 @@
 			
 		<div class="card blue darken-1">
             <div class="card-content white-text">
-              <span class="card-title">Comp1648</span>
+              <span class="card-title">COMP1648</span>
               <p>Computer Programming</p>
             </div>
             <div class="card-action">
@@ -73,9 +73,33 @@
 			
 		</div>
 		
-		<div class="col s4">2</div>
+		<div class="col s4">
 		
-		<div class="col s4">3</div>                            
+				<div class="card blue darken-1">
+            <div class="card-content white-text">
+              <span class="card-title">COMP1656</span>
+              <p>Advanced Programming</p>
+            </div>
+            <div class="card-action">
+              <a href="#">Link<i class="mdi-image-navigate-next"></i></a>
+            </div>
+          </div>	
+			
+		</div>
+		
+		<div class="col s4">
+			
+					<div class="card blue darken-1">
+            <div class="card-content white-text">
+              <span class="card-title">COMP1699</span>
+              <p>Project (CIS)</p>
+            </div>
+            <div class="card-action">
+              <a href="#">Link<i class="mdi-image-navigate-next"></i></a>
+            </div>
+          </div>
+          
+		</div>                            
 
 	</div>
 </div>                       

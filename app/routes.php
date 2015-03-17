@@ -14,9 +14,13 @@
 
 Route::group(array('domain' => 'api.adjective.xyz'), function () {
 
-    Route::get('/', function () {
+    Route::get('team', function () {
         $user = User::take(10)->get();
         return $user;
+    });
+    
+    Route::get('/', function () {
+        return View::make('apiScaffold');
     });
 
     Route::get('users/students', function () {

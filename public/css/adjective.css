@@ -154,4 +154,12 @@ body {
 
 img.responsive-img {
   width:150px;
-  height:150px; } 
+  height:150px; }
+  
+.navstuff {
+	background-color: #0d47a1;
+} 
+
+.sidebarstuff {
+	border-right: solid #1e88e5 2px;
+}

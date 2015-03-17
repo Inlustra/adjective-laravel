@@ -25,8 +25,8 @@
         {{ HTML::script('js/bin/materialize.min.js'); }}
         @yield('post-load')
         <script>
-			$(".button-collapse").sideNav();
-			$(document).ready(function(){
+				$(document).ready(function(){
+				$(".button-collapse").sideNav();
 				$('.collapsible').collapsible({
 					accordion : true
     });

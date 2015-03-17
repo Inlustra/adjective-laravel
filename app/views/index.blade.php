@@ -24,21 +24,27 @@
 
 <div class="container">
 <div class="row">   
-     <div class="col s12"><h4><i class="small mdi-communication-message"></i> Latest Messages</h4>
-	 <ul class="collection">
-	 <li class="collection-item avatar">
-      <span class="title white-text"><div class="card-panel blue darken-1">Ray Stoneham</div></span>
-      <p><i class="mdi-content-drafts"></i>Hello, how are u today?
-      </p>
-      <a href="#!" class="secondary-content"><i class="mdi-content-reply"></i></a>
+	<ul class="collapsible" data-collapsible="accordion">
+    <li>
+      <div class="collapsible-header"><i class="mdi-image-filter-drama"></i>Ray Stoneham</div>
+      <div class="collapsible-body"><p>How are u today?</p>
+      <p><button class="btn waves-effect waves-light" type="submit" name="action">Reply
+    <i class="mdi-content-send right"></i>
+  </button>
+      
+      </div>
     </li>
-	 <ul class="collection">
-	 <li class="collection-item avatar">
-      <span class="title white-text"><div class="card-panel blue darken-1">Keeran Jamil</div></span>
-      <p><i class="mdi-content-drafts"></i>How is the work on project
-      </p>
-      <a href="#!" class="secondary-content"><i class="mdi-content-reply"></i></a>
+    <li>
+      <div class="collapsible-header"><i class="mdi-maps-place"></i>Keeran Jamil</div>
+      <div class="collapsible-body"><p>Coursework is going somewhere.</p>
+      <p><button class="btn waves-effect waves-light" type="submit" name="action">Reply
+    <i class="mdi-content-send right"></i>
+  </button></p>
+      
+      
+      </div>
     </li>
+  </ul>
              
                             
                             

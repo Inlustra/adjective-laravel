@@ -61,14 +61,13 @@
 	<div class="row">
 		<div class="col s4">
 			
-		<div class="card blue lighten-5">
+		<div class="card blue darken-1">
             <div class="card-content white-text">
-              <span class="card-title">Computer Programming</span>
-              <p>COMP1648</p>
+              <span class="card-title">Comp1648</span>
+              <p>Computer Programming</p>
             </div>
             <div class="card-action">
-              <a href="#">This is a link</a>
-              <a href='#'>This is a link</a>
+              <a href="#">Link<i class="mdi-image-navigate-next"></i></a>
             </div>
           </div>	
 			

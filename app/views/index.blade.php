@@ -56,7 +56,27 @@
 <div class="container">
 <div class="row">
 	<div class="col s12"><h4><i class="small mdi-av-my-library-books"></i> Courses</h4>                      
-                            
+	</div>
+	
+	<div class="row">
+		<div class="col s4">
+			
+		<div class="card blue lighten-5">
+            <div class="card-content white-text">
+              <span class="card-title">Computer Programming</span>
+              <p>COMP1648</p>
+            </div>
+            <div class="card-action">
+              <a href="#">This is a link</a>
+              <a href='#'>This is a link</a>
+            </div>
+          </div>	
+			
+		</div>
+		
+		<div class="col s4">2</div>
+		
+		<div class="col s4">3</div>                            
 
 	</div>
 </div>                       

@@ -26,12 +26,8 @@
      <div class="col s12"><h4><i class="small mdi-communication-message"></i> Latest Messages</h4>
 	 <ul class="collection">
 	 <li class="collection-item avatar">
-      <i class="mdi-file-folder circle"></i>
-      <span class="title">Title</span>
-      <p>First Line <br>
-         Second Line
-      </p>
-      <a href="#!" class="secondary-content"><i class="mdi-action-grade"></i></a>
+      <span class="title">Ray Stoneham</span>
+      <p>Hello, how are u today?</p>
     </li>
      
              

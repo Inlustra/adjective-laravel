@@ -26,10 +26,18 @@
      <div class="col s12"><h4><i class="small mdi-communication-message"></i> Latest Messages</h4>
 	 <ul class="collection">
 	 <li class="collection-item avatar">
-      <span class="title">Ray Stoneham</span>
-      <p>Hello, how are u today?</p>
+      <span class="title"><div class="card-panel teal lighten-2">Ray Stoneham</span></div>
+      <p>Hello, how are u today?
+      </p>
+      <a href="#!" class="secondary-content"><i class="mdi-content-reply"></i></a>
     </li>
-     
+        <li class="collection-item avatar">
+      <i class="mdi-action-assessment circle green"></i>
+      <span class="title">Keeran Jamil</span>
+      <p>How is the work on project
+      </p>
+      <a href="#!" class="secondary-content"><i class="mdi-content-reply"></i></a>
+    </li>
              
                             
                             

@@ -25,7 +25,6 @@
 <div class="container">
 <div class="row">
 	<div class="col s12"><h4><i class="small mdi-communication-message"></i> Latest Messages</h4>
-	</div>
 	   
 	<ul class="collapsible" data-collapsible="accordion">
     <li>
@@ -41,12 +40,11 @@
     <i class="mdi-content-send right"></i>
   </button></p>
       
-      
+      </div>      
       </div>
     </li>
   </ul>
-        
-                            
+                                    
                             
      </div>
 </div> 

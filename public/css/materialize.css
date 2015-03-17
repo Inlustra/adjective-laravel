@@ -2249,7 +2249,6 @@ td, th {
 
 .secondary-content {
   float: right;
-  margin-bottom: 5px;
   color: #26a69a; }
 
 span.badge {
@@ -5309,7 +5308,7 @@ small {
       line-height: 2.88rem; } }
 
 .card-panel {
-  padding: 15px;
+  padding: 20px;
   margin: 0.5rem 0 1rem 0;
   -webkit-border-radius: 2px;
   -moz-border-radius: 2px;

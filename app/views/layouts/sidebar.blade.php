@@ -9,7 +9,7 @@
 <ul class="collapsible" data-collapsible="accordeon">
     <li>
       	<div class="collapsible-header active"><i class="mdi-action-account-circle"></i>Profile</div>
-      	<div class="collapsible-body"><p>Edit Profile.</p></div>
+      	<div class="collapsible-body"><p><a href="{{URL::to('editprofile')}}">Edit Profile.</a></p></div>
      	<div class="collapsible-body"><p>View Uploads.</p></div>
     </li>
     <li>

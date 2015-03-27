@@ -10,16 +10,18 @@ class UserController extends \BaseController {
 		
 	}
 	
+	public function editProfile()
+	{
+		$users = User:all();
+		
+		return View::make('editprofile', ['users' => $users]);
+	}
+	
 	public function getFullName()
 	{
 		return $this->firstname . ' ' . $this->lastname;
 	}
 	
-    public function edit($id)
-    {
-        $users = User::find($id);
- 
-        return View::make('user.edit', [ 'users' => $users ]);
     }
 	
 	public function update($id)

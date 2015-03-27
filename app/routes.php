@@ -70,4 +70,5 @@ Route::get('/', function () {
 
 
 Route::get('/user', ['as' => 'user.dashboard', 'before' => 'auth', 'uses' => 'UserController@getDashboard']);
+Route::get('/user/editprofile', ['as' => 'user.edit', 'before' => 'auth', 'uses' => 'UserController@editProfile']);
 Route::controller('/', 'HomeController');

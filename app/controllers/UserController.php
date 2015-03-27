@@ -15,24 +15,25 @@ class UserController extends \BaseController {
 		return $this->firstname . ' ' . $this->lastname;
 	}
 	
-	public function edit($id)
-	{
-		$user = User::find($id);
-		return View:make('user.edit', [ 'user' => $user ]);
-	}
+    public function edit($id)
+    {
+        $users = User::find($id);
+ 
+        return View::make('user.edit', [ 'users' => $users ]);
+    }
 	
 	public function update($id)
 	{
 		$user = User::find($id);
 		
-		$user->firstname = Input::get('firstname');
-		$user->lastname = Input::get('lastname');
-		$user->username = Input::get('username');
-		$user->email = Input::get('email');
-		$user->password = Hash::make(Input::get('password'));
+		$users->firstname = Input::get('firstname');
+		$users->lastname = Input::get('lastname');
+		$users->username = Input::get('username');
+		$users->email = Input::get('email');
+		$users->password = Hash::make(Input::get('password'));
 		
-		$user->save();
+		$users->save();
 		
-		return Redirect::to('/home');
+		return Redirect::to('/user');
 	}
 }

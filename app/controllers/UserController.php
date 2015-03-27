@@ -18,7 +18,7 @@ class UserController extends \BaseController {
 	public function edit($id)
 	{
 		$user = User::find($id);
-		return View:make('user.edit', [ 'user' => $user ])
+		return View:make('user.edit', [ 'user' => $user ]);
 	}
 	
 	public function update($id)

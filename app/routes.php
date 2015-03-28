@@ -72,5 +72,33 @@ Route::get('/editprofile', function () {
 	return View::make('editprofile');
 });
 
+Route::get('/viewuploads', function () {
+	return View::make('viewuploads');
+});
+
+Route::get('/announcements', function () {
+	return View::make('announ');
+});
+
+Route::get('/communications', function () {
+	return View::make('comm');
+});
+
+Route::get('/something', function () {
+	return View::make('something');
+});
+
+Route::get('/travel', function () {
+	return View::make('travel');
+});
+
+Route::get('/viewcourses', function () {
+	return View::make('viewcourses');
+});
+
+Route::get('/viewstudents', function () {
+	return View::make('viewstudents');
+});
+
 Route::get('/user', ['as' => 'user.dashboard', 'before' => 'auth', 'uses' => 'UserController@getDashboard']);
 Route::controller('/', 'HomeController');

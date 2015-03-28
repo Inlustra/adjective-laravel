@@ -100,8 +100,8 @@ Route::get('/viewstudents', function () {
 	return View::make('viewstudents');
 });
 
-Route::get('/course', function() {
-	return View::make('course');
+Route::get('/courses', function() {
+	return View::make('courses');
 }
 
 Route::get('/user', ['as' => 'user.dashboard', 'before' => 'auth', 'uses' => 'UserController@getDashboard']);

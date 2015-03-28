@@ -6,7 +6,7 @@
   
 <div class="container">
 <div class="row">
-	<div class="col s12"><h4><i class="small mdi-social-person"></i> {{ Auth::user()->getFullName() }}</h4>
+	<div class="col s12"><h4><i class="small mdi-social-person"></i> {{ Auth::user()->getFullName }}</h4>
 	</div>
 
 	<div class="col s12 m3 12"><blockquote><p><b>Programme</p><p>Email</p><p>Graduation</p>

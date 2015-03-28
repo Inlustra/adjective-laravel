@@ -25,9 +25,9 @@
             
             <tbody>
 				<tr>
-					<td>{{ $user->getFullName() }}</td>
-					<td>{{ $user->email }}</td>
-					<td>{{ $user->username }}</td>
+					<td>Firstname</td>
+					<td>Username</td>
+					<td>Email@email</td>
 					<td></td>
 					<td></td>
 					<td>button edit</td>

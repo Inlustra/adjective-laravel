@@ -17,18 +17,21 @@
                     <th>Name</th>
                     <th>Username</th>
                     <th>Email</th>
-                    <th>Course</th>
+                    <th>First Marker</th>
+                    <th>Second Marker</th>
                     <th></th>
                 </tr>
             </thead>
             
             <tbody>
-            <tr>
-            <td>Test name</td>
-            <td>user</td>
-            <td>email</td>
-            <td>course</td>
-            <td>button edit</td>
+            	@foreach ($users as $user)
+				<tr>
+					<td>{{ $user->getFullName() }}</td>
+					<td>{{ $user->email }}</td>
+					<td>{{ $user->username }}</td>
+					<td></td>
+					<td></td>
+					<td>button edit</td>
             </tr>
             </tbody>
            

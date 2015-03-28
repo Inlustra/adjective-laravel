@@ -6,7 +6,7 @@
 
 <div class="container">
 <div class="row">
-	<div class="col s12"><h4><i class="small mdi-social-person"></i> View Students</h4>
+	<div class="col s12"><h4><i class="small mdi-action-account-child"></i> View Students</h4>
 	</div>
 	
 	<div class="table-responsive">
@@ -20,7 +20,19 @@
                     <th>Course</th>
                     <th></th>
                 </tr>
-            </thead>	
+            </thead>
+            
+            <tbody>
+            <tr>
+            <td>Test name</td>
+            <td>user</td>
+            <td>email</td>
+            <td>course</td>
+            <td>button edit</td>
+            </tr>
+            </tbody>
+           
+            	
         </table>
 	</div>	
 	

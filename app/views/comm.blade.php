@@ -7,7 +7,6 @@
 <div class="container">
 <div class="row">
 	<div class="col s12"><h4><i class="small mdi-communication-message"></i> Communications</h4>
-	</div>
 	
 	<ul class="collapsible" data-collapsible="accordion">
     <li>

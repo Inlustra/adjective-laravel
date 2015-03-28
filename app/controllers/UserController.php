@@ -9,4 +9,10 @@ class UserController extends \BaseController {
 		return View::make('index', ['users' => $users]);
 		
 	}
+	
+	public function getFullName()
+	{
+		return $this->firstname . ' ' . $this->lastname;
+	}
+	
 }

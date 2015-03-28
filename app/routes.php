@@ -68,6 +68,9 @@ Route::get('/', function () {
     return View::make('login.index');
 });
 
+Route::get('/editprofile', function () {
+	return View::make('editprofile');
+});
 
 Route::get('/user', ['as' => 'user.dashboard', 'before' => 'auth', 'uses' => 'UserController@getDashboard']);
 Route::controller('/', 'HomeController');

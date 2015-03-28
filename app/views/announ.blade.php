@@ -9,9 +9,7 @@
 	<div class="col s12"><h4><i class="small mdi-social-person"></i> Announcements</h4>
 	</div>
 	
-	<h1><i class='fa fa-user'></i> Edit User</h1>
- 
-		
+content 		
 	
 	</div>
 	</div>

@@ -100,5 +100,9 @@ Route::get('/viewstudents', function () {
 	return View::make('viewstudents');
 });
 
+Route::get('/course', function() {
+	return View::make('course');
+}
+
 Route::get('/user', ['as' => 'user.dashboard', 'before' => 'auth', 'uses' => 'UserController@getDashboard']);
 Route::controller('/', 'HomeController');

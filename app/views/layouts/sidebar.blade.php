@@ -1,6 +1,6 @@
 <ul class="collapsible" data-collapsible="expandable">
     <li>
-    	<a href="/">
+    	<a href="user.dashboard">
       	<div class="collapsible-header active"><i class="mdi-action-home"></i>Home</div>
     	</a>
     </li>

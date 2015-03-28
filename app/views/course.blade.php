@@ -9,7 +9,7 @@
 	<div class="col s12"><h4><i class="small mdi-social-person"></i> Course Project</h4>
 	</div>
 	
-content 		
+Course content 		
 	
 	</div>
 	</div>

@@ -9,7 +9,7 @@
 	<div class="col s12"><h4><i class="small mdi-social-person"></i> Announcements</h4>
 	</div>
 	
-content 		
+Content will go here 		
 	
 	</div>
 	</div>

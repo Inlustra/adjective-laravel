@@ -20,7 +20,7 @@
     </li>
     <li>
       	<div class="collapsible-header"><i class="mdi-av-my-library-books"></i>Courses</div>
-      	<div class="collapsible-body"><p><a href="/course">COMP1648</a></p></div>
+      	<div class="collapsible-body"><p><a href="/courses">COMP1648</a></p></div>
       	<div class="collapsible-body"><p>COMP1648</p></div>
       	<div class="collapsible-body"><p>COMP1648</p></div>
     </li>

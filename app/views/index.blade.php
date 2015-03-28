@@ -71,7 +71,7 @@
               <p>31.03.2015</p>
             </div>
             <div class="card-action">
-              <a href="course">Link<i class="mdi-image-navigate-next"></i></a>
+              <a href="courses">Link<i class="mdi-image-navigate-next"></i></a>
             </div>
           </div>	
 			
@@ -85,7 +85,7 @@
               <p>Advanced Programming</p>
             </div>
             <div class="card-action">
-              <a href="course">Link<i class="mdi-image-navigate-next"></i></a>
+              <a href="courses">Link<i class="mdi-image-navigate-next"></i></a>
             </div>
           </div>	
 			
@@ -99,7 +99,7 @@
               <p>Project (CIS)</p>
             </div>
             <div class="card-action">
-              <a href="course">Link<i class="mdi-image-navigate-next"></i></a>
+              <a href="courses">Link<i class="mdi-image-navigate-next"></i></a>
             </div>
           </div>
           

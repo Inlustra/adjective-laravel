@@ -24,7 +24,6 @@
             </thead>
             
             <tbody>
-            	@foreach ($user as $users)
 				<tr>
 					<td>{{ $users->getFullName() }}</td>
 					<td>{{ $users->email }}</td>
@@ -33,7 +32,6 @@
 					<td></td>
 					<td>button edit</td>
             </tr>
-            @endforeach
             </tbody>
            
             	

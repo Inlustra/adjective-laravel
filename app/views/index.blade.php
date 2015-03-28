@@ -9,9 +9,11 @@
 	<div class="col s12"><h4><i class="small mdi-social-person"></i> {{ Auth::user()->username }}</h4>
 	</div>
 
-	<div class="col s12 m3 12"><blockquote><p><b>Programme</p><p>Email</p><p>Graduation</p></blockquote>
+	<div class="col s12 m3 12"><blockquote><p><b>Programme</p><p>Email</p><p>Graduation</p>
+	<p>First Marker</p><p>Second Marker</p></blockquote>
 	</div>
-	<div class="col s12 m3 12"><blockquote><p>Computing</p><p>hellou@hello.com</p><p>2015</p></blockquote></b>
+	<div class="col s12 m3 12"><blockquote><p>Computing</p><p>{{ Auth::user()->email }}</p><p>2015</p>
+	<p>Ray Stoneham</p><p>Keeran Jameel</p></blockquote></b>
 	</div>
     <div class="col s12 m6 18">
     <img src="img/user-icon1.jpg" class="circle responsive-img" />
@@ -65,6 +67,8 @@
             <div class="card-content white-text">
               <span class="card-title">COMP1648</span>
               <p>Computer Programming</p>
+              <p>Deadline</p>
+              <p>31.03.2015</p>
             </div>
             <div class="card-action">
               <a href="#">Link<i class="mdi-image-navigate-next"></i></a>

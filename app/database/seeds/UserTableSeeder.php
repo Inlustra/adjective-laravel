@@ -74,11 +74,13 @@ class UserTableSeeder extends Seeder
 
         $firstname = 'Igor';
         $lastname = 'Jendoletov';
+        $email = 'qlerok@gmail.com';
         $user = new User;
         $user->id = '7';
         $user->username = $firstname . '.' . $lastname;
         $user->firstname = $firstname;
         $user->lastname = $lastname;
+        $user->email = $email;
         $user->password = Hash::make('check123');
         $user->save();
 
@@ -94,11 +96,13 @@ class UserTableSeeder extends Seeder
 
         $firstname = 'Ray';
         $lastname = 'Stoneham';
+        $email = 'raystone@gmail.com';
         $user = new User;
         $user->id = '9';
         $user->username = $firstname . '.' . $lastname;
         $user->firstname = $firstname;
         $user->lastname = $lastname;
+        $user->email = $email;
         $user->password = $password;
         $user->save();
 

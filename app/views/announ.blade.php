@@ -10,15 +10,15 @@
 	</div>
 	
 <ul>
-	<li><a href="/cp/render.UserLayoutRootNode.uP?uP_tparam=utf&amp;utf=%2Fcp%2Fabm%2Fuser%2Fdisplaymessages%3FmsgType%3Dpersonal%23197463 ">Important announcement for international students</a>
-	<li><a href="/cp/render.UserLayoutRootNode.uP?uP_tparam=utf&amp;utf=%2Fcp%2Fabm%2Fuser%2Fdisplaymessages%3FmsgType%3Dpersonal%23197453 ">Bike Safety Checks on-campus 31st March</a>
-	<li><a href="/cp/render.UserLayoutRootNode.uP?uP_tparam=utf&amp;utf=%2Fcp%2Fabm%2Fuser%2Fdisplaymessages%3FmsgType%3Dpersonal%23197366 ">NSS: Have Your Say</a>
+	<li><a href="">Important announcement for international students</a>
+	<li><a href="">Bike Safety Checks on-campus 31st March</a>
+	<li><a href="">NSS: Have Your Say</a>
 </ul>
 
 University Announcements: <ul>
-	<li><a href="/cp/render.UserLayoutRootNode.uP?uP_tparam=utf&amp;utf=%2Fcp%2Fabm%2Fuser%2Fdisplaymessages%3FmsgType%3Dcampus%23197458 ">Resource trials in EBSCOhost Research Databases</a>
-	<li><a href="/cp/render.UserLayoutRootNode.uP?uP_tparam=utf&amp;utf=%2Fcp%2Fabm%2Fuser%2Fdisplaymessages%3FmsgType%3Dcampus%23197455 ">Greenwich Maritime Student Finance Counter Closure</a>
-	<li><a href="/cp/render.UserLayoutRootNode.uP?uP_tparam=utf&amp;utf=%2Fcp%2Fabm%2Fuser%2Fdisplaymessages%3FmsgType%3Dcampus%23197365 ">Test your literacy and numeracy. Win an iPad Air!</a>
+	<li><a href="">Resource trials in EBSCOhost Research Databases</a>
+	<li><a href="">Greenwich Maritime Student Finance Counter Closure</a>
+	<li><a href="">Test your literacy and numeracy. Win an iPad Air!</a>
 </ul>		
 	
 	</div>

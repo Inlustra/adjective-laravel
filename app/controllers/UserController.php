@@ -15,4 +15,11 @@ class UserController extends \BaseController {
 		return $this->firstname . ' ' . $this->lastname;
 	}
 	
+	public function edit($id)
+    {
+        $user = User::find($id);
+ 
+        return View::make('user.edit', [ 'user' => $user ]);
+    }
+	
 }

@@ -33,6 +33,7 @@
 					<td></td>
 					<td>button edit</td>
             </tr>
+            @endforeach
             </tbody>
            
             	

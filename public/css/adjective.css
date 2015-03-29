@@ -402,3 +402,13 @@ table th[class*="col-"] {
     border-bottom: 0;
   }
 }
+
+.btn-small {
+	margin-bottom: 0px;
+	height:22px;
+	line-height: 22px;
+}
+
+.table-text {
+	font-size: small;
+}

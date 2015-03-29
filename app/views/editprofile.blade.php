@@ -7,10 +7,7 @@
 <div class="container">
 <div class="row">
 	<div class="col s12"><h4><i class="small mdi-social-person"></i> Edit details</h4>
-	</div>
-	
-	<div class="row">
-  <form class="col s12">
+	<form class="col s12">
     <div class="row">
       <div class="input-field col s6">
         <input id="first_name" type="text" class="validate">
@@ -39,22 +36,8 @@
         <label for="email">Email</label>
       </div>
     </div>
-        <div class="file-field input-field s12">
-      <input class="file-path validate" type="text"/>
-      <div class="btn">
-        <span>Photo</span>
-        <input type="file" />
-      </div>
-    </div>
-    
-        	<div class="valign-wrapper">
-		<div class="btn"><span>Submit</span>
-		</div>
-
+  </form>
 </div>
-      </form>
-    
-	</div>
 </div>
 </div>
 

@@ -49,14 +49,14 @@
         <input type="file" />
       </div>
     </div>
-  </form>
+
     
     	<div class="valign-wrapper">
-		{{ Form::submit('Submit', ['class' => 'btn']) }}
+		<div class="btn"><span>Submit</span>
 		</div>
 
 </div>
-
+  </form>
 	
 	</div>
 	</div>

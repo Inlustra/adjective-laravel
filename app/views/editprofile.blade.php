@@ -39,28 +39,23 @@
         <label for="email">Email</label>
       </div>
     </div>
-      </form>
-    
-    <form action="#">
-    <div class="file-field input-field s12">
+        <div class="file-field input-field s12">
       <input class="file-path validate" type="text"/>
       <div class="btn">
         <span>Photo</span>
         <input type="file" />
       </div>
     </div>
-
     
-    	<div class="valign-wrapper">
+        	<div class="valign-wrapper">
 		<div class="btn"><span>Submit</span>
 		</div>
 
 </div>
-  </form>
-	
-	</div>
+      </form>
+    
 	</div>
 </div>
-
+</div>
 
 @stop

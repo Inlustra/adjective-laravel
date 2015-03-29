@@ -38,10 +38,27 @@
       </div>
     </div>
     
-      <div class="btn">
-        <span>Photo Upload</span>
-        <input type="file" />
-      </div>
+	<div id="select" class="section scrollspy">
+		<div class="col s12">
+                <label>First Marker</label>
+                <select class="browser-default">
+                  <option value="" disabled selected>Choose your option</option>
+                  <option value="1">Option 1</option>
+                  <option value="2">Option 2</option>
+                  <option value="3">Option 3</option>
+                </select>
+              </div>
+              
+          		<div class="col s12">
+                <label>Second Marker</label>
+                <select class="browser-default">
+                  <option value="" disabled selected>Choose your option</option>
+                  <option value="1">Option 1</option>
+                  <option value="2">Option 2</option>
+                  <option value="3">Option 3</option>
+                </select>
+              </div>    
+            </div>
 
 
 

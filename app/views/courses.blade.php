@@ -48,8 +48,37 @@
     	</div>
     </div>
     
-    <div class="diviver"></div>
+    <div class="divider"></div>
     
+    <div class="container">
+    	<div class="row">
+    		<div class="col s12">
+    			<blockquote>
+    			<p><b>Latest Uploads</b></p>
+    			<p><div class="table-responsive">
+                	<table class="table table-bordered table-striped table-text">
+                    	<thead>
+							<tr>
+								<th>Filename</th>
+								<th>Type</th>
+								<th>Date</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>Filename</td>
+								<td>Interim</td>
+								<td>26.03.2015</td>
+							</tr>
+						</tbody>
+					</table></p>
+					</div>
+    		</div>
+    	</div>
+    </div>					
+
+    <div class="divider"></div>
+        
     <div class="container">
     	<div class="row">
 			<div class="col s12">
@@ -69,7 +98,12 @@
 									<option value="1">Weekly</option>
 									<option value="2">Interim</option>
 									<option value="3">Coursework</option>
-								</select>	
+								</select>
+								
+							<div class="btn">
+								<span>Select file</span>
+								<input type="file"/>
+							</div> 	
 						</form>
 						<div class="btn"><span>Submit</span></div>
 				</div>			

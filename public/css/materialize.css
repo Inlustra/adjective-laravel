@@ -5238,7 +5238,7 @@ small {
 .card {
   position: relative;
   overflow: hidden;
-  margin: 0.5rem 0 1rem 0;
+  margin: 0.5rem 0 0.5rem 0;
   background-color: #fff;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -5249,12 +5249,12 @@ small {
   background-clip: padding-box; }
   .card .card-title {
     color: #fff;
-    font-size: 24px;
+    font-size: 18px;
     font-weight: 300; }
     .card .card-title.activator {
       cursor: pointer; }
   .card a {
-    color: #ffab40;
+    color: #3e43a7;
     margin-right: 20px;
     -webkit-transition: color 0.3s ease;
     -moz-transition: color 0.3s ease;
@@ -5263,7 +5263,7 @@ small {
     transition: color 0.3s ease;
     text-transform: uppercase; }
     .card a:hover {
-      color: #ffd8a6; }
+      color: #ffa6a6; }
   .card.small {
     height: 300px;
     position: relative; }
@@ -5313,7 +5313,7 @@ small {
       line-height: 48px; }
   .card .card-action {
     border-top: 1px solid rgba(160, 160, 160, 0.2);
-    padding: 20px; }
+    padding: 10px; }
   .card .card-reveal {
     padding: 20px;
     position: absolute;

@@ -86,7 +86,7 @@ Route::get('/communications', function () {
 
 Route::get('/meeting', function() {
 	return View::make('meeting');
-}
+});
 
 Route::get('/something', function () {
 	return View::make('something');

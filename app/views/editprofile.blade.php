@@ -7,7 +7,7 @@
     <div class="container">
         <div class="row">
             <div class="col s12"><h4><i class="small mdi-social-person"></i> Edit details</h4>
-
+				<blockquote>
                 <form class="col s12">
                     <div class="row">
                         <div class="input-field col s6">
@@ -48,6 +48,7 @@
             <div class="btn"><span>Submit</span>
             </div>
         </div>
+        </blockquote>
     </div>
 
 

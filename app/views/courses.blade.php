@@ -63,6 +63,13 @@
 									<label for="textarea1">Comment your file</label>
 								</div>
 							</div>
+								<label>Select upload type</label>
+								<select class="browser-default">
+									<option value="" disabled selected>Choose your option</option>
+									<option value="1">Weekly</option>
+									<option value="2">Interim</option>
+									<option value="3">Coursework</option>
+								</select>	
 						</form>
 						<div class="btn"><span>Submit</span></div>
 				</div>			

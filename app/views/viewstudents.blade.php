@@ -72,7 +72,7 @@
                         <td>ji204@greenwichac.uk</td>
                         <td>Keeran Jamil</td>
                         <td>nope</td>
-                        <td><a href="edistudent">Edit</a> / <a href="">Dashboard</td>
+                        <td><a href="editstudent">Edit</a> / <a href="">Dashboard</td>
                     </tr>
                     </tbody>
                 </table>

@@ -112,5 +112,10 @@ Route::get('/editstudent', function() {
 	return View::make('editstudent');
 });
 
+Route::get('/bulk', function() {
+	return View::make('bulk');
+});
+
+
 Route::get('/user', ['as' => 'user.dashboard', 'before' => 'auth', 'uses' => 'UserController@getDashboard']);
 Route::controller('/', 'HomeController');

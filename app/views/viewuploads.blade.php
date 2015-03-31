@@ -8,7 +8,7 @@
         <div class="row">
             <div class="col s12"><h4><i class="small mdi-action-backup"></i> View Uploads</h4>
             </div>
-			<blockquote>
+
             <div class="table-responsive">
                 <table class="table table-bordered table-striped table-text">
                     <thead>
@@ -33,7 +33,6 @@
                     </tbody>
                 </table>
             </div>
-			</blockquote>
         </div>
     </div>
     </div>

@@ -8,6 +8,12 @@
         <div class="row">
             <div class="col s12"><h4><i class="small mdi-action-announcement"></i> Announcements</h4>
             </div>
+        </div>
+    </div>
+    
+    <div class="container">
+    	<div class="row">        
+            <div class="col s12">
             <blockquote>
             	<ul>
                 	<li><a href="">Important announcement for international students</a>
@@ -15,8 +21,14 @@
 					<li><a href="">NSS: Have Your Say</a>
 				</ul>
             </blockquote>
+        </div>
+    </div>
             
-            <div class="divider"></div>
+    <div class="divider"></div>
+    
+    <div class="container">
+    	<div class="row">        
+            <div class="col s12">
             
             <blockquote>
             University Announcements:

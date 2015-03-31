@@ -2,6 +2,7 @@
 <head>
     <!--Import materialize.css-->
     @section('header')
+        {{ HTML::style('css/new/materialize.min.css'); }}
         {{ HTML::style('css/materialize.css'); }}
         {{ HTML::style('css/adjective.css'); }}
         <title>@yield('title','Adjective Laravel')</title>

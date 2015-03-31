@@ -16,7 +16,7 @@ class User extends Eloquent implements UserInterface, RemindableInterface
      *
      * @var array
      */
-    protected $hidden = array('password', 'remember_token','pivot');
+    protected $hidden = array('password', 'remember_token', 'pivot');
     /**
      * The database table used by the model.
      *
@@ -27,17 +27,33 @@ class User extends Eloquent implements UserInterface, RemindableInterface
 
     public function conversations()
     {
-        return $this->hasMany('Correspondence','Sender')->orderBy('created_at');
+        return $this->hasMany('Correspondence', 'Sender')->orderBy('created_at');
     }
 
     public function receivedMessages()
     {
-        return $this->hasMany('Correspondence','Receiver')->orderBy('created_at');
+        return $this->hasMany('Correspondence', 'Receiver')->orderBy('created_at');
     }
 
     public function staffRoles()
     {
         return $this->belongsToMany('Staff', 'User_Staff', 'User', 'Staff')->withTimestamps();
+    }
+
+    public function staffCourses()
+    {
+        return $this->belongsToMany('Course', 'Staff_Course', 'User', 'Course')
+            ->withPivot('role as Role');
+    }
+
+    public function studentCourses()
+    {
+        return $this->student->courses;
+    }
+
+    public function courses()
+    {
+        return $this->staffCourses()->get()->merge($this->studentCourses()->all());
     }
 
     public function student()

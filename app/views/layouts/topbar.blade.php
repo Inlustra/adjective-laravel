@@ -2,7 +2,7 @@
     <nav>
         @if(Auth::user()->isStaff())
             <div class="nav-wrapper navstuff">
-                <a href="#" class="brand-logo">Adjective | Stuff</a>
+                <a href="#" class="brand-logo">Adjective | Staff</a>
             </div>
         @else
             <div class="nav-wrapper">

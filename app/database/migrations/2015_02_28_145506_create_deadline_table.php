@@ -20,7 +20,7 @@ class CreateDeadlineTable extends Migration
             $table->foreign('Course')->references('id')->on('Course');
             $table->dateTime('date');
             $table->string('filetypes')->nullable();
-            $table->boolean('active');
+            $table->boolean('active')->default(true);
             $table->timestamps();
         });
         Schema::create('Deadline_File', function (Blueprint $table) {

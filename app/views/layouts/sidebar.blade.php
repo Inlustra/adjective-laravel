@@ -19,12 +19,19 @@
         <div class="collapsible-body"><p><a href="/communications">Dialogue List</a></p></div>
         <div class="collapsible-body"><p><a href="/meeting">Meetings</a></p></div>
     </li>
-    <li>
-        <div class="collapsible-header"><i class="mdi-av-my-library-books"></i>Courses</div>
-        <div class="collapsible-body"><p><a href="/courses">COMP1648</a></p></div>
-        <div class="collapsible-body"><p>COMP1648</p></div>
-        <div class="collapsible-body"><p>COMP1648</p></div>
-    </li>
+    @if(Auth::user()->isStudent())
+        <li>
+            <div class="collapsible-header"><i class="mdi-av-my-library-books"></i>Courses</div>
+            @foreach(Auth::user()->studentCourses() as $course)
+                <div class="collapsible-body">
+                    <p>
+                        {{HTML::linkRoute('student.course', $course->name, array($course->id))}}
+                    </p>
+                </div>
+            @endforeach
+        </li>
+    @endif
+
 
 </ul>
 <br>
@@ -36,14 +43,18 @@
     </li>
 </ul>
 
-<br>
-
 @if(Auth::user()->isStaff())
+    <br>
     <ul class="collapsible" data-collapsible="expandable">
         <li>
-            <div class="collapsible-header"><i class="mdi-av-my-library-books"></i>Administration</div>
-            <div class="collapsible-body"><p><a href="/viewstudents">View Students</a></p></div>
-            <div class="collapsible-body"><p><a href="/bulk">Bulk Allocation</a></p></div>
+            <div class="collapsible-header"><i class="mdi-action-description"></i>Course Administration</div>
+            @foreach(Auth::user()->staffCourses() ->get() as $course)
+                <div class="collapsible-body">
+                    <p>
+                        {{HTML::linkRoute('admin.course', $course->name, array($course->id))}}
+                    </p>
+                </div>
+            @endforeach
         </li>
     </ul>
 @endif

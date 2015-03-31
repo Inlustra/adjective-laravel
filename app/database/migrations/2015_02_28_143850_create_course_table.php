@@ -16,9 +16,16 @@ class CreateCourseTable extends Migration
         Schema::create('Course', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name', 50);
-            $table->unsignedInteger('Director');
-            $table->foreign('Director')->references('id')->on('User');
+            $table->string('code', 25);
+            $table->text('description');
             $table->timestamps();
+        });
+        Schema::create('Staff_Course', function (Blueprint $table) {
+            $table->unsignedInteger('Course');
+            $table->foreign('Course')->references('id')->on('Course');
+            $table->unsignedInteger('User');
+            $table->foreign('User')->references('id')->on('User');
+            $table->string('role');
         });
         Schema::create('Student_Course', function (Blueprint $table) {
             $table->unsignedInteger('Course');
@@ -39,6 +46,7 @@ class CreateCourseTable extends Migration
      */
     public function down()
     {
+        Schema::dropIfExists('Staff_Course');
         Schema::dropIfExists('Student_Course');
         Schema::dropIfExists('Course');
     }

@@ -12,11 +12,6 @@ class Course extends Eloquent
 
     protected $hidden = array('pivot');
 
-    public function director()
-    {
-        return $this->belongsTo('User', 'Director');
-    }
-
     public function deadlines()
     {
         return $this->hasMany('Deadline', 'Course');
@@ -24,9 +19,14 @@ class Course extends Eloquent
 
     public function students()
     {
-        return $this->belongsToMany('Student', 'Student_Course', 'Course', 'Student');
+        return $this->belongsToMany('Student', 'Student_Course', 'Course', 'Student')
+            ->withPivot('Supervisor as Supervisor', 'SecondMarker as SecondMarker');
     }
 
+    public function staff()
+    {
+        return $this->belongsToMany('User', 'Staff_Course', 'Course', 'User')->withPivot('role as Role');
+    }
 
 
 }

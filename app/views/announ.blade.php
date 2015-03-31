@@ -21,6 +21,7 @@
 					<li><a href="">NSS: Have Your Say</a>
 				</ul>
             </blockquote>
+            </div>
         </div>
     </div>
             
@@ -39,8 +40,8 @@
             </ul>
             </blockquote>
 
-        </div>
-    </div>
+			</div>
+		</div>
     </div>
 
 @stop

@@ -43,7 +43,6 @@
             <div class="collapsible-header"><i class="mdi-av-my-library-books"></i>Administration</div>
             <div class="collapsible-body"><p><a href="/viewstudents">View Students</a></p></div>
             <div class="collapsible-body"><p><a href="/viewcourses">View Courses</a></p></div>
-            <div class="collapsible-body"><p><a href="/something">Something</a></p></div>
         </li>
     </ul>
 @endif

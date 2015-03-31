@@ -5402,7 +5402,7 @@ small {
 
 .tabs {
   position: relative;
-  height: 48px;
+  height: 36px;
   background-color: #dedada;
   margin: 0 auto;
   width: 100%;
@@ -5412,15 +5412,15 @@ small {
     float: left;
     text-align: center;
     background-color: #fff;
-    line-height: 48px;
-    height: 48px;
+    line-height: 36px;
+    height: 36px;
     padding: 0 20px;
     margin: 0;
     text-transform: uppercase;
     letter-spacing: 0.8px;
     width: 15%; }
     .tabs li.tab a {
-      color: #ee6e73;
+      color: #1e88e5;
       display: block;
       width: 100%;
       height: 100%;
@@ -5430,12 +5430,12 @@ small {
       -ms-transition: color 0.28s ease;
       transition: color 0.28s ease; }
       .tabs li.tab a:hover {
-        color: #f9c9cb; }
+        color: #0259a4; }
   .tabs .indicator {
     position: absolute;
     bottom: 0;
     height: 2px;
-    background-color: #f6b2b5;
+    background-color: #1e88e5;
     will-change: left, right; }
 
 ul.tabs li.tab {

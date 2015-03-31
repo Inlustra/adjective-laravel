@@ -12,25 +12,24 @@
             <div class="col s12 m3 12">
                 <blockquote><p><b>Programme</b></p>
 
-                    <p>Email</p>
+                    <p><b>Email</b></p>
 
-                    <p>Graduation</p>
+                    <p><b>Graduation</b></p>
 
-                    <p>First Marker</p>
+                    <p><b>First Marker</b></p>
 
-                    <p>Second Marker</p></blockquote>
+                    <p><b>Second Marker</b></p></blockquote>
             </div>
             <div class="col s12 m3 12">
-                <blockquote><p>Computing</p>
+                <blockquote><p><b>Computing</b></p>
 
-                    <p>{{ Auth::user()->email }}</p>
+                    <p><b>{{ Auth::user()->email }}</b></p>
 
-                    <p>2015</p>
+                    <p><b>2015</b></p>
 
-                    <p>Ray Stoneham</p>
+                    <p><b>Ray Stoneham</b></p>
 
-                    <p>Keeran Jameel</p></blockquote>
-                </b>
+                    <p><b>Keeran Jameel</b></p></blockquote>
             </div>
             <div class="col s12 m6 18">
                 <img src="img/user-icon1.jpg" class="circle responsive-img"/>

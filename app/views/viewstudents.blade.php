@@ -6,7 +6,7 @@
 
     <div class="container">
         <div class="row">
-            <div class="col s12"><h4><i class="small mdi-action-account-child"></i> View Students</h4>
+            <div class="col s12"><h4><i class="small mdi-action-account-child"></i> View Uploads</h4>
             </div>
 
             <div class="table-responsive">

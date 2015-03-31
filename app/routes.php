@@ -104,5 +104,9 @@ Route::get('/courses', function() {
 	return View::make('courses');
 });
 
+Route::get('/editstudent', function() {
+	return View::make('editstudent');
+});
+
 Route::get('/user', ['as' => 'user.dashboard', 'before' => 'auth', 'uses' => 'UserController@getDashboard']);
 Route::controller('/', 'HomeController');

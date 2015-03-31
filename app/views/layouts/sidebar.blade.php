@@ -17,6 +17,7 @@
     <li>
         <div class="collapsible-header"><i class="mdi-communication-chat"></i>Communication</div>
         <div class="collapsible-body"><p><a href="communications">Dialogue List</a></p></div>
+        <div class="collapsible-body"><p><a href="meetings">Meetings</a></p></div>
     </li>
     <li>
         <div class="collapsible-header"><i class="mdi-av-my-library-books"></i>Courses</div>
@@ -42,7 +43,7 @@
         <li>
             <div class="collapsible-header"><i class="mdi-av-my-library-books"></i>Administration</div>
             <div class="collapsible-body"><p><a href="/viewstudents">View Students</a></p></div>
-            <div class="collapsible-body"><p><a href="/viewcourses">View Courses</a></p></div>
+            <div class="collapsible-body"><p><a href="/something">Bulk Allocation</a></p></div>
         </li>
     </ul>
 @endif

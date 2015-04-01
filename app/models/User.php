@@ -10,6 +10,7 @@ class User extends Eloquent implements UserInterface, RemindableInterface
 
     use UserTrait, RemindableTrait;
 
+    protected $appends = array('fullName');
 
     /**
      * The attributes excluded from the model's JSON form.
@@ -157,5 +158,9 @@ class User extends Eloquent implements UserInterface, RemindableInterface
         })->with(array('student', 'student.degree', 'student.courses'));;
     }
 
+    public function getFullNameAttribute()
+    {
+        return $this->firstname . " " . $this->lastname;
+    }
 
 }

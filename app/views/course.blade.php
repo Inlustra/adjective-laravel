@@ -59,6 +59,107 @@
         </div>
     </div>
 
+    @if(isset($meetings))
+        <div class="divider"></div>
+
+        <br>
+        <div class="container">
+            <div class="row">
+                <div class="col s12">
+                    <h5>Meetings</h5>
+                    <ul class="collapsible" data-collapsible="accordion">
+                        @foreach($meetings as $meeting)
+                            <li>
+                                <div class="collapsible-header">
+                                    @if($meeting->held)
+                                        <i class="mdi-action-history grey-text"></i>
+                                    @elseif(!$meeting->isAccepted(Auth::user()))
+                                        <i class="mdi-alert-error red-text"></i>
+                                    @elseif(!$meeting->isAcceptedOther(Auth::user()))
+                                        <i class="mdi-device-access-time yellow-text"></i>
+                                    @else
+                                        <i class="mdi-action-today green-text"></i>
+                                    @endif
+                                    <span class="left truncate">{{$meeting->agenda}}</span>
+                                    <span class="right badge">{{$meeting->time}}</span></div>
+                                @if($meeting->held)
+                                    <div class="collapsible-body">
+                                        <p>{{$meeting->minutes}}</p>
+                                    </div>
+                                @elseif(!$meeting->isAccepted(Auth::user()))
+                                    <div class="collapsible-body">
+                                        <div class="row">
+                                            <div class="col s12 center-align">
+                                                </br>
+                                                <button class="btn waves-effect waves-light green" type="submit"
+                                                        name="action">
+                                                    Accept
+                                                    <i class="mdi-action-done right"></i>
+                                                </button>
+                                                <button class="btn waves-effect waves-light yellow darken-3"
+                                                        type="submit"
+                                                        name="action">
+                                                    Change Time
+                                                    <i class="mdi-editor-mode-edit right"></i>
+                                                </button>
+                                                <button class="btn waves-effect waves-light red" type="submit"
+                                                        name="action">
+                                                    Cancel
+                                                    <i class="mdi-alert-warning right"></i>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                @elseif(!$meeting->isAcceptedOther(Auth::user()))
+                                    <div class="collapsible-body">
+                                        <div class="row">
+                                            <div class="col s12 center-align">
+                                                </br>
+                                                <button class="btn waves-effect waves-light yellow darken-3"
+                                                        type="submit"
+                                                        name="action">
+                                                    Change Time
+                                                    <i class="mdi-editor-mode-edit right"></i>
+                                                </button>
+                                                <button class="btn waves-effect waves-light red" type="submit"
+                                                        name="action">
+                                                    Cancel
+                                                    <i class="mdi-alert-warning right"></i>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                @else
+                                    <div class="collapsible-body">
+                                        <div class="row">
+                                            <div class="col s12 center-align">
+                                                </br>
+                                                <button class="btn waves-effect waves-light yellow darken-3"
+                                                        type="submit"
+                                                        name="action">
+                                                    Change Time
+                                                    <i class="mdi-editor-mode-edit right"></i>
+                                                </button>
+                                                <button class="btn waves-effect waves-light red" type="submit"
+                                                        name="action">
+                                                    Cancel
+                                                    <i class="mdi-alert-warning right"></i>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                @endif
+
+                            </li>
+                        @endforeach
+                    </ul>
+                    <a class="waves-effect waves-teal btn-flat right">View all {{$meetings_count}} meetings</a>
+
+                </div>
+            </div>
+        </div>
+    @endif
+
     @if(Auth::user()->isStaff())
         <div class="divider"></div>
 
@@ -174,10 +275,12 @@
                     <blockquote>
                         <p><b>Upload your work</b></p>
 
-                        <p>
-
                         <div class="row">
                             <form class="col s12">
+                                <div class="btn">
+                                    <span>Select file</span>
+                                    <input type="file"/>
+                                </div>
                                 <div class="row">
                                     <div class="input-field col s12">
                                         <textarea id="textarea1" class="materialize-textarea"></textarea>
@@ -191,11 +294,6 @@
                                     <option value="2">Interim</option>
                                     <option value="3">Coursework</option>
                                 </select>
-
-                                <div class="btn">
-                                    <span>Select file</span>
-                                    <input type="file"/>
-                                </div>
                             </form>
                             <div class="btn"><span>Submit</span></div>
                         </div>

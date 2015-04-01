@@ -6,12 +6,14 @@ class CourseController extends \BaseController
     public function admin($id)
     {
         $course = Course::find($id)->with('staff')->first();
+        $meetings = Meeting::withStaff(Auth::user(), $course)->sort()->take(5)->get();
+        $meetings_count = Meeting::withStaff(Auth::user(), $course)->sort()->count();
         foreach ($course->students as &$student) {
             $student->Supervisor = User::find($student->Supervisor);
             $student->SecondMarker = User::find($student->SecondMarker);
         }
         return View::make('course')->with(
-            array('course' => $course));
+            array('course' => $course, 'meetings' => $meetings, 'meetings_count' => $meetings_count));
     }
 
     /**
@@ -58,11 +60,12 @@ class CourseController extends \BaseController
         $course = Course::find($id)
             ->with(array('staff', 'deadlines'))
             ->first();
+        $meetings = Meeting::withStudent(Auth::user(), $course)->sort()->get();
         foreach ($course->students as &$student) {
             $student->Supervisor = User::find($student->Supervisor);
         }
         return View::make('course')->with(
-            array('course' => $course));
+            array('course' => $course, 'meetings' => $meetings));
     }
 
 

@@ -13,7 +13,9 @@ class CourseController extends \BaseController
             $student->SecondMarker = User::find($student->SecondMarker);
         }
         return View::make('course')->with(
-            array('course' => $course, 'meetings' => $meetings, 'meetings_count' => $meetings_count));
+            array('course' => $course,
+                'meetings' => $meetings,
+                'meetings_count' => $meetings_count));
     }
 
     /**
@@ -61,11 +63,14 @@ class CourseController extends \BaseController
             ->with(array('staff', 'deadlines'))
             ->first();
         $meetings = Meeting::withStudent(Auth::user(), $course)->sort()->get();
+        $meetings_count = Meeting::withStudent(Auth::user(), $course)->sort()->count();
         foreach ($course->students as &$student) {
             $student->Supervisor = User::find($student->Supervisor);
         }
         return View::make('course')->with(
-            array('course' => $course, 'meetings' => $meetings));
+            array('course' => $course,
+                'meetings' => $meetings,
+                'meetings_count' => $meetings_count));
     }
 
 

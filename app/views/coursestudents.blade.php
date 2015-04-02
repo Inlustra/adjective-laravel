@@ -62,7 +62,7 @@
                                     <td>{{$student->user->email}}</td>
                                     <td>{{$student->Supervisor->fullName  or 'None'}}</td>
                                     <td>{{$student->SecondMarker->fullName  or 'None'}}</td>
-                                    {{HTML::linkRoute('admin.course.editstudents', 'Edit',
+                                    <td>{{HTML::linkRoute('admin.course.editstudents', 'Edit',
 									array($course->student))}} / <a href="">Dashboard</a></td>
                                 </tr>
                             @endif

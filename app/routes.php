@@ -128,8 +128,7 @@ Route::get('/admin/course/new', ['as' => 'admin.course.new', 'before' => 'auth',
 Route::get('/course/{id}', ['as' => 'student.course', 'before' => 'auth|student.course', 'uses' => 'CourseController@show']);
 Route::get('/user', ['as' => 'user.dashboard', 'before' => 'auth', 'uses' => 'UserController@getDashboard']);
 
+Route::get('/admin/course/{id}/students/edit', ['as' => 'admin.admin.editstudents', 'before' => 'auth|admin.course', 'uses' => 'CourseController@editstudents']);
+Route::get('/admin/course/{id}/students/bulk', ['as' => 'admin.course.bulk', 'before' => 'auth|admin.course', 'uses' => 'CourseController@bulk']);
+
 Route::controller('/', 'HomeController');
-
-Route::get('/admin/course/{id}/staff', ['as' => 'admin.admin.editstudents', 'before' => 'auth|admin.course', 'uses' => 'CourseController@editstudents']);
-
-Route::get('/admin/course/{id}/staff', ['as' => 'admin.course.bulk', 'before' => 'auth|admin.course', 'uses' => 'CourseController@bulk']);

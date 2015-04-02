@@ -15,6 +15,7 @@
                     <table class="table table-bordered table-striped table-text">
                         <thead>
                         <tr>
+                        	<th></th>
                             <th>Name</th>
                             <th>Email</th>
                             <th>1st Marker</th>
@@ -26,6 +27,7 @@
                         @foreach($course->students as $student)
                             @if($student->SecondMarker!= null && $student->Supervisor != null)
                                 <tr>
+                                    <td><input type="checkbox" id="test5" /></td>
                                     <td>{{$student->user->fullName}}</td>
                                     <td>{{$student->user->email}}</td>
                                     <td>{{$student->Supervisor->fullName  or 'None'}}</td>

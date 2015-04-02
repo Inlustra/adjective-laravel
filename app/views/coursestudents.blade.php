@@ -170,6 +170,9 @@
                 <script>
                 </script>
             </div>
+            
+            <h5>Bulk Students - {{HTML::linkRoute('admin.course.bulk', 'Edit', array($course->student))}}</h5>
+            	
             <div class="fixed-action-btn" style="bottom: 45px; right: 24px;">
                 <a class="btn-floating btn-large green">
                     <i class="large mdi-action-done"></i>

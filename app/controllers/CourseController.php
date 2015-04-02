@@ -28,6 +28,34 @@ class CourseController extends \BaseController
         return View::make('coursestudents')->with(
             array('course' => $course));
     }
+    
+    public function editStudent($id)
+    {
+        $course = Course::find($id)->with('staff')->first();
+        foreach ($course->students as &$student) {
+            $student->Supervisor = User::find($student->Supervisor);
+            $student->SecondMarker = User::find($student->SecondMarker);
+        }
+        return View::make('editstudents')->with(
+            array('course' => $course));
+    }
+    
+    public function updateStudent($id)
+    {
+	    $user = User::find($id);
+	    
+	    $user->firstname = Input::get('first_name');
+	    $user->lastname = Input::get('last_name');
+	    $user->username = Input::get('username');
+	    $user->email = Input::get('email');
+	    $user->Supervisor = Input::get('Supervisor');
+	    $user->SecondMarker = Input::get('SecondMarker');
+	    
+	    $user->save();
+	    
+	    return View::make('/editstudents')->with(
+	    	array('course' => $course));
+    }
 
     public function staff($id)
     {

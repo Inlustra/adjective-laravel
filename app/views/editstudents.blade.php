@@ -12,36 +12,30 @@
                     <div class="row">
                         <div class="input-field col s6">
                             <input id="first_name" type="text" class="validate">
-                            <label for="first_name">First Name</label>
+                            <label for="first_name">{{$student->user->firstname}}</label>
                         </div>
                         <div class="input-field col s6">
                             <input id="last_name" type="text" class="validate">
-                            <label for="last_name">Last Name</label>
+                            <label for="last_name">{{$student->user->lastname}}</label>
                         </div>
                     </div>
                     <div class="row">
                         <div class="input-field col s12">
                             <input id="username" type="text" class="validate">
-                            <label for="username">Username</label>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="input-field col s12">
-                            <input id="password" type="password" class="validate">
-                            <label for="password">Password</label>
+                            <label for="username">{{$student->user->username}}</label>
                         </div>
                     </div>
                     <div class="row">
                         <div class="input-field col s12">
                             <input id="email" type="email" class="validate">
-                            <label for="email">Email</label>
+                            <label for="email">{{$student->user->email}}</label>
                         </div>
                     </div>
                     <div id="select" class="section scrollspy">
                         <div class="col s12">
                             <label>First Marker</label>
                             <select class="browser-default">
-                                <option value="" disabled selected>Choose your option</option>
+                                <option value="" disabled selected>{{$student->Supervisor->fullName  or 'None'}}</option>
                                 <option value="1">Option 1</option>
                                 <option value="2">Option 2</option>
                                 <option value="3">Option 3</option>
@@ -50,7 +44,7 @@
                         <div class="col s12">
                             <label>Second Marker</label>
                             <select class="browser-default">
-                                <option value="" disabled selected>Choose your option</option>
+                                <option value="" disabled selected>{{$student->SecondMarker->fullName  or 'None'}}</option>
                                 <option value="1">Option 1</option>
                                 <option value="2">Option 2</option>
                                 <option value="3">Option 3</option>

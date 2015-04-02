@@ -30,7 +30,8 @@
                                     <td>{{$student->user->email}}</td>
                                     <td>{{$student->Supervisor->fullName  or 'None'}}</td>
                                     <td>{{$student->SecondMarker->fullName  or 'None'}}</td>
-                                    <td><a href="editstudent">Edit</a> / <a href="">Dashboard</a></td>
+                                    <td>{{HTML::linkRoute('admin.course.editstudents', 'Edit',
+									array($course->student))}} / <a href="">Dashboard</a></td>
                                 </tr>
                             @endif
                         @endforeach
@@ -61,31 +62,11 @@
                                     <td>{{$student->user->email}}</td>
                                     <td>{{$student->Supervisor->fullName  or 'None'}}</td>
                                     <td>{{$student->SecondMarker->fullName  or 'None'}}</td>
-                                    <td><a href="editstudent">Edit</a> / <a href="">Dashboard</a></td>
+                                    {{HTML::linkRoute('admin.course.editstudents', 'Edit',
+									array($course->student))}} / <a href="">Dashboard</a></td>
                                 </tr>
                             @endif
                         @endforeach
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td>
-                                <select class="browser-default" id="FirstMarker">
-                                    <option value="" disabled selected></option>
-                                    <option value="1">Option 1</option>
-                                    <option value="2">Option 2</option>
-                                    <option value="3">Option 3</option>
-                                </select>
-                            </td>
-                            <td>
-                                <select class="browser-default" id="FirstMarker">
-                                    <option value="" disabled selected></option>
-                                    <option value="1">Option 1</option>
-                                    <option value="2">Option 2</option>
-                                    <option value="3">Option 3</option>
-                                </select>
-                            </td>
-                            <td><a href="editstudent">Edit</a> / <a href="">Dashboard</a></td>
-                        </tr>
                         </tbody>
                     </table>
                 </div>
@@ -114,7 +95,8 @@
                                     <td>{{$student->user->email}}</td>
                                     <td>{{$student->Supervisor->fullName  or 'None'}}</td>
                                     <td>{{$student->SecondMarker->fullName  or 'None'}}</td>
-                                    <td><a href="editstudent">Edit</a> / <a href="">Dashboard</a></td>
+                                    <td>{{HTML::linkRoute('admin.course.editstudents', 'Edit',
+									array($course->student))}} / <a href="">Dashboard</a></td>
                                 </tr>
                             @endif
                         @endforeach
@@ -145,7 +127,8 @@
                                     <td>{{$student->user->email}}</td>
                                     <td>{{$student->Supervisor->fullName  or 'None'}}</td>
                                     <td>{{$student->SecondMarker->fullName  or 'None'}}</td>
-                                    <td><a href="editstudent">Edit</a> / <a href="">Dashboard</a></td>
+                                    <td>{{HTML::linkRoute('admin.course.editstudents', 'Edit',
+									array($course->student))}} / <a href="">Dashboard</a></td>
                                 </tr>
                             @endif
                         @endforeach

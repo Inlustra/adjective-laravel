@@ -171,12 +171,25 @@
                 <div class="col s12">
                     <h5>Students</h5>
 
-                    <div id="test1" class="col s12">
+                    <div class="col s12">
+
+                        <h4> Manage {{$course->name}} Students</h4>
+
+
+                        <ul class="tabs">
+                            <li class="tab col s3"><a href="#all">All</a></li>
+                            <li class="tab col s3"><a class="active" href="#n1st">no 1st marker</a></li>
+                            <li class="tab col s3"><a href="#n2nd">no 2nd marker</a></li>
+                            <li class="tab col s3"><a href="#nn">No markers</a></li>
+                        </ul>
+                    </div>
+                    <br>
+
+                    <div id="all" class="col s12">
                         <div class="table-responsive">
                             <table class="table table-bordered table-striped table-text">
                                 <thead>
                                 <tr>
-                                    <th>Username</th>
                                     <th>Name</th>
                                     <th>Email</th>
                                     <th>1st Marker</th>
@@ -187,13 +200,100 @@
                                 <tbody>
                                 @foreach($course->students as $student)
                                     <tr>
-                                        <td>{{$student->user->username}}</td>
-                                        <td>{{$student->user->firstname." ".$student->user->lastname}}</td>
-                                        <td>{{$student->email}}</td>
-                                        <td>{{$student->Supervisor->fullName or 'None'}}</td>
-                                        <td>{{$student->SecondMarker->fullName or 'None'}}</td>
-                                        <td><a href="">Dashboard</a></td>
+                                        <td>{{$student->user->fullName}}</td>
+                                        <td>{{$student->user->email}}</td>
+                                        <td>{{$student->Supervisor->fullName  or 'None'}}</td>
+                                        <td>{{$student->SecondMarker->fullName  or 'None'}}</td>
+                                        <td><a href="editstudent">Edit</a> / <a href="">Dashboard</a></td>
                                     </tr>
+                                @endforeach
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div id="n1st" class="col s12">
+                        <div class="table-responsive">
+                            <table class="table table-bordered table-striped table-text">
+                                <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Email</th>
+                                    <th>1st Marker</th>
+                                    <th>2nd Marker</th>
+                                    <th></th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                @foreach($course->students as $student)
+                                    @if($student->Supervisor == null)
+                                        <tr>
+                                            <td>{{$student->user->fullName}}</td>
+                                            <td>{{$student->user->email}}</td>
+                                            <td>{{$student->Supervisor->fullName  or 'None'}}</td>
+                                            <td>{{$student->SecondMarker->fullName  or 'None'}}</td>
+                                            <td><a href="editstudent">Edit</a> / <a href="">Dashboard</a></td>
+                                        </tr>
+                                    @endif
+                                @endforeach
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+
+                    <div id="n2nd" class="col s12">
+                        <div class="table-responsive">
+                            <table class="table table-bordered table-striped table-text">
+                                <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Email</th>
+                                    <th>1st Marker</th>
+                                    <th>2nd Marker</th>
+                                    <th></th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                @foreach($course->students as $student)
+                                    @if($student->SecondMarker == null)
+                                        <tr>
+                                            <td>{{$student->user->fullName}}</td>
+                                            <td>{{$student->user->email}}</td>
+                                            <td>{{$student->Supervisor->fullName  or 'None'}}</td>
+                                            <td>{{$student->SecondMarker->fullName  or 'None'}}</td>
+                                            <td><a href="editstudent">Edit</a> / <a href="">Dashboard</a></td>
+                                        </tr>
+                                    @endif
+                                @endforeach
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div id="nn" class="col s12">
+                        <div class="table-responsive">
+                            <table class="table table-bordered table-striped table-text">
+                                <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Email</th>
+                                    <th>1st Marker</th>
+                                    <th>2nd Marker</th>
+                                    <th></th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                @foreach($course->students as $student)
+                                    @if($student->SecondMarker == null && $student->Supervisor == null )
+                                        <tr>
+                                            <td>{{$student->user->fullName}}</td>
+                                            <td>{{$student->user->email}}</td>
+                                            <td>{{$student->Supervisor->fullName  or 'None'}}</td>
+                                            <td>{{$student->SecondMarker->fullName  or 'None'}}</td>
+                                            <td><a href="editstudent">Edit</a> / <a href="">Dashboard</a></td>
+                                        </tr>
+                                    @endif
                                 @endforeach
                                 </tbody>
                             </table>

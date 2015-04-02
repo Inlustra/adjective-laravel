@@ -190,8 +190,8 @@
                                         <td>{{$student->user->username}}</td>
                                         <td>{{$student->user->firstname." ".$student->user->lastname}}</td>
                                         <td>{{$student->email}}</td>
-                                        <td>{{$student->Supervisor->firstname." ".$student->Supervisor->lastname}}</td>
-                                        <td>{{$student->SecondMarker->firstname." ".$student->SecondMarker->lastname}}</td>
+                                        <td>{{$student->Supervisor->fullName or 'None'}}</td>
+                                        <td>{{$student->SecondMarker->fullName or 'None'}}</td>
                                         <td><a href="">Dashboard</a></td>
                                     </tr>
                                 @endforeach

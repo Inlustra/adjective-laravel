@@ -17,6 +17,11 @@ class Correspondence extends Eloquent
         return $this->belongsTo('Conversation', 'Conversation');
     }
 
+    public function to()
+    {
+        return $this->hasOne('User', 'Receiver');
+    }
+
     public function from()
     {
         return $this->hasOne('User', 'Sender');

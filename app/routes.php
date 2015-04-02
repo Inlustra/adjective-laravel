@@ -80,10 +80,6 @@ Route::get('/announcements', function () {
 	return View::make('announ');
 });
 
-Route::get('/communications', function () {
-	return View::make('comm');
-});
-
 Route::get('/meeting', function() {
 	return View::make('meeting');
 });
@@ -106,12 +102,17 @@ Route::get('/courses', function() {
 
 Route::get('/api/users/staff', function () {
     $type = Input::get('query');
-    return User::named($type)->get();
+    return User::named($type)->orderBy('lastname')->get();
 });
 
 Route::get('/api/users/{id}', function ($id) {
     return User::find($id);
 });
+
+Route::post('/communications/', ['as' => 'comm.reply', 'before' => 'auth', 'uses' => 'CommunicationController@reply']);
+
+Route::get('/communications/', ['as' => 'comm', 'before' => 'auth', 'uses' => 'CommunicationController@index']);
+
 Route::get('/user/', ['as' => 'user', 'before' => 'auth', 'uses' => 'UserController@show']);
 
 Route::get('/student/{id}', ['as' => 'admin.students.one', 'before' => 'auth|admin', 'uses' => 'UserController@student']);

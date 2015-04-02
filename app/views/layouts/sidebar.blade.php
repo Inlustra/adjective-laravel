@@ -16,7 +16,11 @@
     </li>
     <li>
         <div class="collapsible-header"><i class="mdi-communication-chat"></i>Communication</div>
-        <div class="collapsible-body"><p><a href="/communications">Dialogue List</a></p></div>
+        <div class="collapsible-body">
+            <p>
+                {{HTML::linkRoute('comm', "Conversations")}}
+            </p>
+        </div>
         <div class="collapsible-body"><p><a href="/meeting">Meetings</a></p></div>
     </li>
     @if(Auth::user()->isStudent())

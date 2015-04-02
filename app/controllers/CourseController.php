@@ -42,16 +42,16 @@ class CourseController extends \BaseController
     
     public function updateStudent($id)
     {
-	    $user = User::find($id);
+	    $student = User::find($id);
 	    
-	    $user->firstname = Input::get('first_name');
-	    $user->lastname = Input::get('last_name');
-	    $user->username = Input::get('username');
-	    $user->email = Input::get('email');
-	    $user->Supervisor = Input::get('Supervisor');
-	    $user->SecondMarker = Input::get('SecondMarker');
+	    $student->firstname = Input::get('first_name');
+	    $student->lastname = Input::get('last_name');
+	    $student->username = Input::get('username');
+	    $student->email = Input::get('email');
+	    $student->Supervisor = Input::get('Supervisor');
+	    $student->SecondMarker = Input::get('SecondMarker');
 	    
-	    $user->save();
+	    $student->save();
 	    
 	    return View::make('/editstudents')->with(
 	    	array('course' => $course));

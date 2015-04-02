@@ -100,13 +100,8 @@ Route::get('/bulkall', function () {
 	return View::make('bulk');
 });
 
-
 Route::get('/courses', function() {
 	return View::make('course');
-});
-
-Route::get('/bulk', function() {
-	return View::make('bulk');
 });
 
 Route::get('/api/users/staff', function () {

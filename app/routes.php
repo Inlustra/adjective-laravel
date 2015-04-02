@@ -132,4 +132,4 @@ Route::controller('/', 'HomeController');
 
 Route::get('/admin/course/{id}/staff', ['as' => 'admin.admin.editstudents', 'before' => 'auth|admin.course', 'uses' => 'CourseController@editstudents']);
 
-Route get::('/admin/course/{id}/staff', ['as' => 'admin.course.bulk', 'before' => 'auth|admin.course', 'uses' => 'CourseController@bulk']);
+Route::get('/admin/course/{id}/staff', ['as' => 'admin.course.bulk', 'before' => 'auth|admin.course', 'uses' => 'CourseController@bulk']);

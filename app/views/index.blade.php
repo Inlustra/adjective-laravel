@@ -26,7 +26,7 @@
 
                     <p><b>{{ Auth::user()->email }}</b></p>
 					
-					@if(Auth:user()->isStudent())
+					@if(Auth::user()->isStudent())
                     <p><b>{{$student->Supervisor->fullName  or 'None'}}</b></p>
 
                     <p><b>{{$student->SecondMarker->fullName  or 'None'}}</b></p></blockquote>

@@ -190,16 +190,20 @@
                                         <td>{{$student->email}}</td>
                                         <td>{{$student->Supervisor->firstname." ".$student->Supervisor->lastname}}</td>
                                         <td>{{$student->SecondMarker->firstname." ".$student->SecondMarker->lastname}}</td>
-                                        <td><a href="editstudent">Edit</a> / <a href="">Dashboard</a></td>
+                                        <td><a href="">Dashboard</a></td>
                                     </tr>
                                 @endforeach
                                 </tbody>
                             </table>
                         </div>
                     </div>
+                    {{HTML::linkRoute('admin.course.students', 'Manage students',
+                    array($course->id),
+                    array('class'=>'waves-effect waves-teal btn-flat right'))}}
                 </div>
             </div>
         </div>
+
         <div class="fixed-action-btn" style="bottom: 45px; right: 24px;">
             <a class="btn-floating btn-large red">
                 <i class="large mdi-editor-mode-edit"></i>

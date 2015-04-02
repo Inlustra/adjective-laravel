@@ -112,11 +112,22 @@ Route::get('/editstudent', function() {
 Route::get('/bulk', function() {
 	return View::make('bulk');
 });
+
+Route::get('/api/users/staff', function () {
+    $type = Input::get('query');
+    return User::named($type)->get();
+});
+
+Route::get('/api/users/{id}', function ($id) {
+    return User::find($id);
+});
 Route::get('/user/', ['as' => 'user', 'before' => 'auth', 'uses' => 'UserController@show']);
 
 Route::get('/student/{id}', ['as' => 'admin.students.one', 'before' => 'auth|admin', 'uses' => 'UserController@student']);
 Route::get('/student/', ['as' => 'admin.students.list', 'before' => 'auth|admin', 'uses' => 'UserController@students']);
 
+Route::get('/admin/course/{id}/data', ['as' => 'admin.course.data', 'before' => 'auth|admin.course', 'uses' => 'CourseController@get']);
+Route::get('/admin/course/{id}/students', ['as' => 'admin.course.students', 'before' => 'auth|admin.course', 'uses' => 'CourseController@students']);
 Route::get('/admin/course/{id}', ['as' => 'admin.course', 'before' => 'auth|admin.course', 'uses' => 'CourseController@admin']);
 Route::get('/admin/course/new', ['as' => 'admin.course.new', 'before' => 'auth', 'uses' => 'CourseController@new']);
 

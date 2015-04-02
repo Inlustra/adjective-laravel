@@ -18,6 +18,13 @@ class CourseController extends \BaseController
                 'meetings_count' => $meetings_count));
     }
 
+    public function students($id)
+    {
+        $course = Course::find($id)->with('staff')->first();
+        return View::make('coursestudents')->with(
+            array('course' => $course));
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -62,7 +69,7 @@ class CourseController extends \BaseController
         $course = Course::find($id)
             ->with(array('staff', 'deadlines'))
             ->first();
-        $meetings = Meeting::withStudent(Auth::user(), $course)->sort()->get();
+        $meetings = Meeting::withStudent(Auth::user(), $course)->sort()->take(5)->get();
         $meetings_count = Meeting::withStudent(Auth::user(), $course)->sort()->count();
         foreach ($course->students as &$student) {
             $student->Supervisor = User::find($student->Supervisor);
@@ -73,6 +80,10 @@ class CourseController extends \BaseController
                 'meetings_count' => $meetings_count));
     }
 
+    public function get($id)
+    {
+        return $course = Course::find($id)->with(array('staff', 'deadlines', 'students', 'students.user'))->first();
+    }
 
     /**
      * Show the form for editing the specified resource.

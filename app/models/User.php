@@ -79,12 +79,12 @@ class User extends Eloquent implements UserInterface, RemindableInterface
 
     public function scopeNamed($query, $name)
     {
-        $query = $query->where('firstname', 'LIKE', $name)
-            ->where('lastname', 'LIKE', $name, 'OR');
+        $query = $query->where('firstname', 'LIKE', "%".$name."%")
+            ->where('lastname', 'LIKE', "%".$name."%", 'OR');
         $names = explode(' ', $name);
         foreach ($names as $name) {
-            $query = $query->where('firstname', 'LIKE', $name)
-                ->where('lastname', 'LIKE', $name, 'OR');
+            $query = $query->where('firstname', 'LIKE', "%".$name."%")
+                ->where('lastname', 'LIKE', "%".$name."%", 'OR');
         }
         return $query;
     }

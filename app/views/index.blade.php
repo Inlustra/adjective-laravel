@@ -18,7 +18,6 @@
                     <p><b>First Marker</b></p>
 
                     <p><b>Second Marker</b></p></blockquote>
-                    @else
                     @endif
             </div>
             <div class="col s12 m3 12">
@@ -30,7 +29,6 @@
                     <p><b>{{$student->Supervisor->fullName  or 'None'}}</b></p>
 
                     <p><b>{{$student->SecondMarker->fullName  or 'None'}}</b></p></blockquote>
-                    @else
                     @endif
             </div>
             <div class="col s12 m6 18">

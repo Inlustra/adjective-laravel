@@ -21,7 +21,18 @@ class CourseController extends \BaseController
     public function students($id)
     {
         $course = Course::find($id)->with('staff')->first();
+        foreach ($course->students as &$student) {
+            $student->Supervisor = User::find($student->Supervisor);
+            $student->SecondMarker = User::find($student->SecondMarker);
+        }
         return View::make('coursestudents')->with(
+            array('course' => $course));
+    }
+
+    public function staff($id)
+    {
+        $course = Course::find($id)->with('staff')->first();
+        return View::make('coursestaff')->with(
             array('course' => $course));
     }
 

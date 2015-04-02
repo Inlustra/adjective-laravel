@@ -27,6 +27,9 @@
                     @endforeach
                 </blockquote>
             </div>
+            {{HTML::linkRoute('admin.course.staff', 'Manage staff',
+            array($course->id),
+            array('class'=>'waves-effect waves-teal btn-flat right'))}}
         </div>
     </div>
     <div class="divider"></div>
@@ -55,7 +58,6 @@
                     </tbody>
                 </table>
             </div>
-
         </div>
     </div>
 

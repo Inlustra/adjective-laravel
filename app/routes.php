@@ -128,6 +128,8 @@ Route::get('/student/', ['as' => 'admin.students.list', 'before' => 'auth|admin'
 
 Route::get('/admin/course/{id}/data', ['as' => 'admin.course.data', 'before' => 'auth|admin.course', 'uses' => 'CourseController@get']);
 Route::get('/admin/course/{id}/students', ['as' => 'admin.course.students', 'before' => 'auth|admin.course', 'uses' => 'CourseController@students']);
+Route::get('/admin/course/{id}/staff', ['as' => 'admin.course.staff', 'before' => 'auth|admin.course', 'uses' => 'CourseController@staff']);
+
 Route::get('/admin/course/{id}', ['as' => 'admin.course', 'before' => 'auth|admin.course', 'uses' => 'CourseController@admin']);
 Route::get('/admin/course/new', ['as' => 'admin.course.new', 'before' => 'auth', 'uses' => 'CourseController@new']);
 

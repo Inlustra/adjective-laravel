@@ -172,10 +172,6 @@
                     <h5>Students</h5>
 
                     <div class="col s12">
-
-                        <h4> Manage {{$course->name}} Students</h4>
-
-
                         <ul class="tabs">
                             <li class="tab col s3"><a href="#all">All</a></li>
                             <li class="tab col s3"><a class="active" href="#n1st">no 1st marker</a></li>
@@ -204,8 +200,7 @@
                                         <td>{{$student->user->email}}</td>
                                         <td>{{$student->Supervisor->fullName  or 'None'}}</td>
                                         <td>{{$student->SecondMarker->fullName  or 'None'}}</td>
-                                        <td>{{HTML::linkRoute('admin.course.editstudents', 'Edit',
-									array($course->student))}} / <a href="">Dashboard</a></td>
+                                        <td><a href="">Dashboard</a></td>
                                     </tr>
                                 @endforeach
                                 </tbody>
@@ -233,8 +228,7 @@
                                             <td>{{$student->user->email}}</td>
                                             <td>{{$student->Supervisor->fullName  or 'None'}}</td>
                                             <td>{{$student->SecondMarker->fullName  or 'None'}}</td>
-                                            <td>{{HTML::linkRoute('admin.course.editstudents', 'Edit',
-									array($course->student))}} / <a href="">Dashboard</a></td>
+                                            <td><a href="">Dashboard</a></td>
                                         </tr>
                                     @endif
                                 @endforeach
@@ -264,8 +258,7 @@
                                             <td>{{$student->user->email}}</td>
                                             <td>{{$student->Supervisor->fullName  or 'None'}}</td>
                                             <td>{{$student->SecondMarker->fullName  or 'None'}}</td>
-                                            <td>{{HTML::linkRoute('admin.course.editstudents', 'Edit',
-									array($course->student))}} / <a href="">Dashboard</a></td>
+                                            <td><a href="">Dashboard</a></td>
                                         </tr>
                                     @endif
                                 @endforeach

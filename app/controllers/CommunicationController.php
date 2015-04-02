@@ -22,7 +22,7 @@ class CommunicationController extends \BaseController
             );
         }
 
-        return View::make('Communications', array("user" => Auth::user(),
+        return View::make('communications', array("user" => Auth::user(),
             "conversations" => $convos));
     }
 

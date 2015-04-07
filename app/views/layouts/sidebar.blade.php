@@ -23,10 +23,10 @@
         </div>
         <div class="collapsible-body"><p><a href="/meeting">Meetings</a></p></div>
     </li>
-    @if(Auth::user()->isStudent())
+    @if(Adjective::user()->isStudent())
         <li>
             <div class="collapsible-header"><i class="mdi-av-my-library-books"></i>Courses</div>
-            @foreach(Auth::user()->studentCourses() as $course)
+            @foreach(Adjective::user()->studentCourses() as $course)
                 <div class="collapsible-body">
                     <p>
                         {{HTML::linkRoute('student.course', $course->name, array($course->id))}}
@@ -47,12 +47,12 @@
     </li>
 </ul>
 
-@if(Auth::user()->isStaff())
+@if(Adjective::user()->isStaff())
     <br>
     <ul class="collapsible" data-collapsible="expandable">
         <li>
             <div class="collapsible-header"><i class="mdi-action-description"></i>Course Administration</div>
-            @foreach(Auth::user()->staffCourses() ->get() as $course)
+            @foreach(Adjective::user()->staffCourses() ->get() as $course)
                 <div class="collapsible-body">
                     <p>
                         {{HTML::linkRoute('admin.course', $course->name, array($course->id))}}

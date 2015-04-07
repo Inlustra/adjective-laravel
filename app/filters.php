@@ -57,14 +57,14 @@ Route::filter('auth.hasRole', function ($route, $request, $value) {
 
 Route::filter('admin.course', function ($route) {
     $course = $route->getParameter('id');
-    if (!in_array($course, array_fetch(Auth::user()->staffCourses()->get()->toArray(), 'id'))) {
+    if (!in_array($course, array_fetch(Adjective::user()->staffCourses()->get()->toArray(), 'id'))) {
         return Redirect::to('unauthorized');
     }
 });
 
 Route::filter('student.course', function ($route) {
     $course = $route->getParameter('id');
-    if (!in_array($course, array_fetch(Auth::user()->studentCourses()->toArray(), 'id'))) {
+    if (!in_array($course, array_fetch(Adjective::user()->studentCourses()->toArray(), 'id'))) {
         return Redirect::to('unauthorized');
     }
 });

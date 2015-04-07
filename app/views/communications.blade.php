@@ -20,13 +20,13 @@
                                 <div class="collapsible-body  container">
                                     @foreach($convo->correspondence as $corresp)
                                         <div class="row">
-                                            <div class="col @if($corresp->Sender == Auth::user()->id) right @endif">
+                                            <div class="col @if($corresp->Sender == Adjective::user()->id) right @endif">
 
                                                 <div class="card-panel
-                                                @if($corresp->Sender == Auth::user()->id)
+                                                @if($corresp->Sender == Adjective::user()->id)
                                                 blue lighten-2
                                                 @endif">
-                                                    @if($corresp->Sender == Auth::user()->id)
+                                                    @if($corresp->Sender == Adjective::user()->id)
                                                         <div class="right-align white-text">You</div>
                                                     @else
                                                         <div class="left-align blue-text">

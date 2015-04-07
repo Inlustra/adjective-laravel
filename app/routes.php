@@ -134,5 +134,7 @@ Route::get('/user', ['as' => 'user.dashboard', 'before' => 'auth', 'uses' => 'Us
 
 Route::post('/admin/course/{id}/students', ['as' => 'admin.course.students.post', 'before' => 'auth|admin.course', 'uses' => 'CourseController@postStudents']);
 Route::get('/admin/course/{id}/students/bulk', ['as' => 'admin.course.bulk', 'before' => 'auth|admin.course', 'uses' => 'CourseController@bulk']);
+Route::get('/admin/user/imitate/user/{id}', ['as' => 'admin.imitate', 'before' => 'auth|admin', 'uses' => 'Adjective@imitate']);
+Route::get('/admin/user/imitate/end', ['as' => 'admin.imitate.end', 'uses' => 'Adjective@stopImitation']);
 
 Route::controller('/', 'HomeController');

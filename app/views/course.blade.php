@@ -28,7 +28,7 @@
                 </blockquote>
             </div>
 
-            @if(Auth::user()->isStaff())
+            @if($user->isStaff())
                 {{HTML::linkRoute('admin.course.staff', 'Manage staff',
                 array($course->id),
                 array('class'=>'waves-effect waves-teal btn-flat right'))}}
@@ -54,7 +54,7 @@
                             <td>{{$deadline->timeLeft}}</td>
                             <td>
                                 <a href="editstudent">Upload</a>
-                                @if(Auth::user()->isStaff())/ <a href="editstudent">Edit</a>@endif
+                                @if($user->isStaff())/ <a href="editstudent">Edit</a>@endif
                             </td>
                         </tr>
                     @endforeach
@@ -81,9 +81,9 @@
                                 <div class="collapsible-header">
                                     @if($meeting->held)
                                         <i class="mdi-action-history grey-text"></i>
-                                    @elseif(!$meeting->isAccepted(Auth::user()))
+                                    @elseif(!$meeting->isAccepted($user))
                                         <i class="mdi-alert-error red-text"></i>
-                                    @elseif(!$meeting->isAcceptedOther(Auth::user()))
+                                    @elseif(!$meeting->isAcceptedOther($user))
                                         <i class="mdi-device-access-time yellow-text"></i>
                                     @else
                                         <i class="mdi-action-today green-text"></i>
@@ -94,7 +94,7 @@
                                     <div class="collapsible-body">
                                         <p>{{$meeting->minutes}}</p>
                                     </div>
-                                @elseif(!$meeting->isAccepted(Auth::user()))
+                                @elseif(!$meeting->isAccepted($user))
                                     <div class="collapsible-body">
 
                                         <div class="row">
@@ -119,7 +119,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                @elseif(!$meeting->isAcceptedOther(Auth::user()))
+                                @elseif(!$meeting->isAcceptedOther($user))
                                     <div class="collapsible-body">
                                         <div class="row">
                                             <div class="col s12 center-align">
@@ -169,7 +169,7 @@
         </div>
     @endif
 
-    @if(Auth::user()->isStaff())
+    @if($user->isStaff())
         <div class="divider"></div>
 
         <br>
@@ -207,7 +207,10 @@
                                         <td>{{$student->user->email}}</td>
                                         <td>{{$student->Supervisor->fullName  or 'None'}}</td>
                                         <td>{{$student->SecondMarker->fullName  or 'None'}}</td>
-                                        <td><a href="">Dashboard</a></td>
+                                        <td>
+                                            {{HTML::linkRoute('admin.imitate', 'Dashboard',
+                                                array($student->user->id))}}
+                                        </td>
                                     </tr>
                                 @endforeach
                                 </tbody>
@@ -235,7 +238,8 @@
                                             <td>{{$student->user->email}}</td>
                                             <td>{{$student->Supervisor->fullName  or 'None'}}</td>
                                             <td>{{$student->SecondMarker->fullName  or 'None'}}</td>
-                                            <td><a href="">Dashboard</a></td>
+                                            <td>{{HTML::linkRoute('admin.imitate', 'Dashboard',
+                                                array($student->user->id))}}</td>
                                         </tr>
                                     @endif
                                 @endforeach
@@ -265,7 +269,8 @@
                                             <td>{{$student->user->email}}</td>
                                             <td>{{$student->Supervisor->fullName  or 'None'}}</td>
                                             <td>{{$student->SecondMarker->fullName  or 'None'}}</td>
-                                            <td><a href="">Dashboard</a></td>
+                                            <td>{{HTML::linkRoute('admin.imitate', 'Dashboard',
+                                                array($student->user->id))}}</td>
                                         </tr>
                                     @endif
                                 @endforeach
@@ -294,7 +299,8 @@
                                             <td>{{$student->user->email}}</td>
                                             <td>{{$student->Supervisor->fullName  or 'None'}}</td>
                                             <td>{{$student->SecondMarker->fullName  or 'None'}}</td>
-                                            <td><a href="">Dashboard</a></td>
+                                            <td>{{HTML::linkRoute('admin.imitate', 'Dashboard',
+                                                array($student->user->id))}}</td>
                                         </tr>
                                     @endif
                                 @endforeach
@@ -341,7 +347,7 @@
         </div>
     </div>
 
-    @if(Auth::user()->isStudent())
+    @if($user->isStudent())
         <div class="divider"></div>
         <div class="container">
             <div class="row">
@@ -376,7 +382,7 @@
         </div>
     @endif
 
-    @if(Auth::user()->isStudent())
+    @if($user->isStudent())
         <div class="divider"></div>
         <div class="container">
             <div class="row">

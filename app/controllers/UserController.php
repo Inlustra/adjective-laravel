@@ -39,7 +39,7 @@ class UserController extends \BaseController
         $meeting = Meeting::find($id);
         switch ($action) {
             case "Accept":
-                $meeting->accept(Auth::user());
+                $meeting->accept(Adjective::user());
                 $meeting->save();
                 break;
             case "Cancel":

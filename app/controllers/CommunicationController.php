@@ -10,7 +10,7 @@ class CommunicationController extends \BaseController
      */
     public function index()
     {
-        $convos = Conversation::withUser(Auth::user())->orderBy('updated_at')->get();
+        $convos = Conversation::withUser(Adjective::user())->orderBy('updated_at')->get();
         foreach ($convos as &$convo) {
             $convo->names = array_reduce(
                 $convo->participants->toArray(),
@@ -22,14 +22,14 @@ class CommunicationController extends \BaseController
             );
         }
 
-        return View::make('communications', array("user" => Auth::user(),
+        return View::make('communications', array("user" => Adjective::user(),
             "conversations" => $convos));
     }
 
     public function reply()
     {
         $conversation = Conversation::find(Input::get('conversation'))->first();
-        $conversation->addMessage(Auth::user(), Input::get('message'));
+        $conversation->addMessage(Adjective::user(), Input::get('message'));
         return Redirect::route('comm');
     }
 

@@ -16,6 +16,7 @@
     </div>
 
     <div class="container">
+
         <div class="row">
             <h4>Staff</h4>
 
@@ -48,22 +49,20 @@
         <div class="row">
             <h5>Add Staff</h5>
 
-            <form>
-                <div class="input-field col s5">
-                    <i class="mdi-action-search prefix"></i>
-                    <input id="staff_search" type="text" class="validate">
-                    <label for="staff_search">Name, Email, ID</label>
-                </div>
-                <div class="input-field col s5">
-                    <input id="staff_role" type="text" class="validate">
-                    <label for="staff_role">Role</label>
-                </div>
-                <div class="col s2">
-                    <a onClick="addStaff()" class="btn-floating waves-effect waves-light btn-medium green">
-                        <i class="mdi-content-add"></i>
-                    </a>
-                </div>
-            </form>
+            <div class="input-field col s5">
+                <i class="mdi-action-search prefix"></i>
+                <input id="staff_search" type="text" class="validate">
+                <label for="staff_search">Name, Email, ID</label>
+            </div>
+            <div class="input-field col s5">
+                <input id="staff_role" type="text" class="validate">
+                <label for="staff_role">Role</label>
+            </div>
+            <div class="col s2">
+                <a onClick="addStaff()" class="btn-floating waves-effect waves-light btn-medium green">
+                    <i class="mdi-content-add"></i>
+                </a>
+            </div>
             <script>
                 var i = 0;
                 var current_staff = {};
@@ -71,6 +70,17 @@
                 var staff_role = $('#staff_role');
                 var staffToRemove = [];
                 var staffToAdd = [];
+                var postUrl = '{{route('admin.course.staff.post',$course->id)}}';
+                function save() {
+                    var data = {
+                        Add: staffToAdd,
+                        Remove: staffToRemove
+                    }
+                    console.log(data);
+                    $.post(postUrl, data, function (data) {
+                        location.reload();
+                    });
+                }
                 staff_search.autocomplete({
                     noCache: true,
                     dataType: 'json',
@@ -78,6 +88,9 @@
                     transformResult: function (response) {
                         return {
                             suggestions: $.map(response, function (dataItem) {
+                                if ($('#staff-' + dataItem.id).length) {
+                                    return;
+                                }
                                 return {value: dataItem.fullName, data: dataItem};
                             })
                         };
@@ -93,7 +106,7 @@
                         Materialize.toast('You need to select a staff member first!', 4000);
                         return;
                     }
-                    staffToAdd.push({staff_id: current_staff.id, staff_role: staff_role.val()});
+                    staffToAdd.push({staff_id: current_staff.data.id, staff_role: staff_role.val()});
                     $('#staff tr:last').after
                     ("<tr class='blue lighten-4' id='staff-" + current_staff.staff_id + "'>" +
                     "<td>" + current_staff.data.username + "</td>" +
@@ -109,7 +122,7 @@
                         return;
                     }
                     $('#staff-' + id).remove();
-                    staffToRemove.push({staff_id: current_staff.id});
+                    staffToRemove.push(id);
                     console.log(staffToRemove);
                 }
 
@@ -128,6 +141,11 @@
                     console.log(staffToAdd);
                 }
             </script>
+        </div>
+        <div class="fixed-action-btn" style="bottom: 45px; right: 24px;">
+            <a onClick="save()" class="btn-floating btn-large green">
+                <i class="large mdi-action-done"></i>
+            </a>
         </div>
     </div>
     <br>

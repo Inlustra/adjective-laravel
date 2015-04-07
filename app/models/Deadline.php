@@ -31,15 +31,22 @@ class Deadline extends Eloquent
 
     public function getTimeLeftAttribute()
     {
+
         $now = time();
-        $time = strtotime($this->date)-$now;
-        if ($time > 60 && $time < 3600)
-            return ($time / 60) . "minutes remaining";
-        else if ($time > 3600 && $time < 86400) return intval($time / 3600) . ' hours remaining';
-        else if ($time > 86400 && $time < 604800) return intval($time / 86400) . ' days remaining';
-        else if ($time > 604800 && $time < 18144000) return intval($time / 604800) . ' weeks remaining';
-        else if ($time > 18144000 && $time < 217728000) return intval($time / 18144000) . ' months remaining';
-        else return intval($time / 217728000) . ' years remaining';
+        $time = strtotime($this->date) - $now;
+        $pre = " Due in ";
+        $post = "";
+        if ($time < 0) {
+            $time = abs($time);
+            $post = " ago";
+            $pre = "Deadline past ";
+        }
+        if ($time > 60 && $time < 3600) return $pre . ($time / 60) . "minutes" . $post;
+        else if ($time > 3600 && $time < 86400) return $pre.intval($time / 3600) . ' hours' . $post;
+        else if ($time > 86400 && $time < 604800) return $pre.intval($time / 86400) . ' days' . $post;
+        else if ($time > 604800 && $time < 18144000) return $pre.intval($time / 604800) . ' weeks' . $post;
+        else if ($time > 18144000 && $time < 217728000) return $pre.intval($time / 18144000) . ' months' . $post;
+        else return $pre.intval($time / 217728000) . ' years' . $post;
     }
 
 

@@ -27,9 +27,12 @@
                     @endforeach
                 </blockquote>
             </div>
-            {{HTML::linkRoute('admin.course.staff', 'Manage staff',
-            array($course->id),
-            array('class'=>'waves-effect waves-teal btn-flat right'))}}
+
+            @if(Auth::user()->isStaff())
+                {{HTML::linkRoute('admin.course.staff', 'Manage staff',
+                array($course->id),
+                array('class'=>'waves-effect waves-teal btn-flat right'))}}
+            @endif
         </div>
     </div>
     <div class="divider"></div>
@@ -72,6 +75,9 @@
                     <ul class="collapsible" data-collapsible="accordion">
                         @foreach($meetings as $meeting)
                             <li>
+
+                                {{ Form::open(array('route' => array('user.meeting.post', $meeting->id),
+                                'style'=>'margin-bottom:0px;'))}}
                                 <div class="collapsible-header">
                                     @if($meeting->held)
                                         <i class="mdi-action-history grey-text"></i>
@@ -90,22 +96,23 @@
                                     </div>
                                 @elseif(!$meeting->isAccepted(Auth::user()))
                                     <div class="collapsible-body">
+
                                         <div class="row">
                                             <div class="col s12 center-align">
                                                 </br>
                                                 <button class="btn waves-effect waves-light green" type="submit"
-                                                        name="action">
+                                                        name="action" value="Accept">
                                                     Accept
                                                     <i class="mdi-action-done right"></i>
                                                 </button>
                                                 <button class="btn waves-effect waves-light yellow darken-3"
                                                         type="submit"
-                                                        name="action">
+                                                        name="action" value="Cancel">
                                                     Change Time
                                                     <i class="mdi-editor-mode-edit right"></i>
                                                 </button>
                                                 <button class="btn waves-effect waves-light red" type="submit"
-                                                        name="action">
+                                                        name="action" value="Cancel">
                                                     Cancel
                                                     <i class="mdi-alert-warning right"></i>
                                                 </button>
@@ -151,7 +158,7 @@
                                         </div>
                                     </div>
                                 @endif
-
+                                {{ Form::close() }}
                             </li>
                         @endforeach
                     </ul>
@@ -287,8 +294,7 @@
                                             <td>{{$student->user->email}}</td>
                                             <td>{{$student->Supervisor->fullName  or 'None'}}</td>
                                             <td>{{$student->SecondMarker->fullName  or 'None'}}</td>
-                                            <td>{{HTML::linkRoute('admin.course.editstudents', 'Edit',
-									array($course->student))}} / <a href="">Dashboard</a></td>
+                                            <td><a href="">Dashboard</a></td>
                                         </tr>
                                     @endif
                                 @endforeach

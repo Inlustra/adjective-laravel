@@ -23,4 +23,8 @@ class Student extends Eloquent {
         return $this->belongsToMany('Course', 'Student_Course', 'Student', 'Course')
             ->withPivot('Supervisor as Supervisor', 'SecondMarker as SecondMarker');
     }
+
+    public function course($id) {
+        return $this->courses()->where('Course', $id)->first();
+    }
 }

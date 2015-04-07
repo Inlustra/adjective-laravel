@@ -28,7 +28,7 @@ class CourseController extends \BaseController
         return View::make('coursestudents')->with(
             array('course' => $course));
     }
-    
+
     public function editStudents($id)
     {
         $course = Course::find($id)->with('staff')->first();
@@ -39,22 +39,40 @@ class CourseController extends \BaseController
         return View::make('editstudents')->with(
             array('course' => $course));
     }
-    
+
+    public function postStudents($id)
+    {
+        if (Input::has("student"))
+            foreach (Input::get("student") as $studentId) {
+                $user = User::find($studentId);
+                $user->student->courses()->detach($id);
+                $array = array();
+                if (Input::has('FirstMarker')) {
+                    $array["Supervisor"] = Input::get("FirstMarker");
+                }
+                if (Input::has('SecondMarker')) {
+                    $array["SecondMarker"] = Input::get("SecondMarker");
+                }
+                $user->student->courses()->attach($id, $array);
+            }
+        return $this->students($id);
+    }
+
     public function updateStudent($id)
     {
-	    $student = User::find($id);
-	    
-	    $student->firstname = Input::get('first_name');
-	    $student->lastname = Input::get('last_name');
-	    $student->username = Input::get('username');
-	    $student->email = Input::get('email');
-	    $student->Supervisor = Input::get('Supervisor');
-	    $student->SecondMarker = Input::get('SecondMarker');
-	    
-	    $student->save();
-	    
-	    return View::make('/editstudents')->with(
-	    	array('course' => $course));
+        $student = User::find($id);
+
+        $student->firstname = Input::get('first_name');
+        $student->lastname = Input::get('last_name');
+        $student->username = Input::get('username');
+        $student->email = Input::get('email');
+        $student->Supervisor = Input::get('Supervisor');
+        $student->SecondMarker = Input::get('SecondMarker');
+
+        $student->save();
+
+        return View::make('/editstudents')->with(
+            array('course' => $id));
     }
 
     public function staff($id)
@@ -62,6 +80,21 @@ class CourseController extends \BaseController
         $course = Course::find($id)->with('staff')->first();
         return View::make('coursestaff')->with(
             array('course' => $course));
+    }
+
+    public function postStaff($id)
+    {
+        if (Input::has("Add"))
+            foreach (Input::get("Add") as $remove) {
+                $sid = $remove["staff_id"];
+                $role = $remove["staff_role"];
+                User::find($sid)->staffCourses()->attach($id,
+                    array('role' => $role));
+            }
+        if (Input::has("Remove"))
+            foreach (Input::get("Remove") as $remove) {
+                User::find($remove)->staffCourses()->detach($id);
+            }
     }
 
     /**

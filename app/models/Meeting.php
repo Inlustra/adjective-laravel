@@ -10,7 +10,7 @@ class Meeting extends Eloquent
      */
     protected $table = 'Meeting';
 
-    protected $appends = array('timeLeft', 'statusAttribute');
+    protected $appends = array('timeLeft', 'status');
 
     public function scopeWithStudent($query, $user, $course)
     {
@@ -79,6 +79,22 @@ class Meeting extends Eloquent
     public function staff()
     {
         return $this->hasOne('Staff', 'User');
+    }
+
+    public function accept($user)
+    {
+        if (!is_numeric($user)) {
+            $user = $user->id;
+        }
+        $student = $this->Student;
+        if (!is_numeric($this->Student)) {
+            $student = $student->id;
+        }
+        if ($student == $user) {
+            $this->accepted_student = true;
+            return;
+        }
+        $this->accepted_staff = true;
     }
 
     public function otherMember($user)

@@ -120,15 +120,19 @@ Route::get('/student/', ['as' => 'admin.students.list', 'before' => 'auth|admin'
 
 Route::get('/admin/course/{id}/data', ['as' => 'admin.course.data', 'before' => 'auth|admin.course', 'uses' => 'CourseController@get']);
 Route::get('/admin/course/{id}/students', ['as' => 'admin.course.students', 'before' => 'auth|admin.course', 'uses' => 'CourseController@students']);
+
+Route::post('/admin/course/{id}/staff', ['as' => 'admin.course.staff.post', 'before' => 'auth|admin.course', 'uses' => 'CourseController@postStaff']);
 Route::get('/admin/course/{id}/staff', ['as' => 'admin.course.staff', 'before' => 'auth|admin.course', 'uses' => 'CourseController@staff']);
 
 Route::get('/admin/course/{id}', ['as' => 'admin.course', 'before' => 'auth|admin.course', 'uses' => 'CourseController@admin']);
 Route::get('/admin/course/new', ['as' => 'admin.course.new', 'before' => 'auth', 'uses' => 'CourseController@new']);
 
 Route::get('/course/{id}', ['as' => 'student.course', 'before' => 'auth|student.course', 'uses' => 'CourseController@show']);
+
+Route::post('/user/meetings/{id}', ['as' => 'user.meeting.post', 'before' => 'auth', 'uses' => 'UserController@postMeeting']);
 Route::get('/user', ['as' => 'user.dashboard', 'before' => 'auth', 'uses' => 'UserController@getDashboard']);
 
-Route::get('/admin/course/{id}/students/edit', ['as' => 'admin.course.editstudents', 'before' => 'auth|admin.course', 'uses' => 'CourseController@editStudents']);
+Route::post('/admin/course/{id}/students', ['as' => 'admin.course.students.post', 'before' => 'auth|admin.course', 'uses' => 'CourseController@postStudents']);
 Route::get('/admin/course/{id}/students/bulk', ['as' => 'admin.course.bulk', 'before' => 'auth|admin.course', 'uses' => 'CourseController@bulk']);
 
 Route::controller('/', 'HomeController');

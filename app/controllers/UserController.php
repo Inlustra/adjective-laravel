@@ -33,4 +33,19 @@ class UserController extends \BaseController
         return View::make('user.edit', ['user' => User::find($id)->first()]);
     }
 
+    public function postMeeting($id)
+    {
+        $action = Input::get("action") or "";
+        $meeting = Meeting::find($id);
+        switch ($action) {
+            case "Accept":
+                $meeting->accept(Auth::user());
+                $meeting->save();
+                break;
+            case "Cancel":
+                break;
+        }
+        return Redirect::back();
+    }
+
 }

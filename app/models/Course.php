@@ -25,7 +25,8 @@ class Course extends Eloquent
 
     public function staff()
     {
-        return $this->belongsToMany('User', 'Staff_Course', 'Course', 'User')->withPivot('role as Role');
+        return $this->belongsToMany('User', 'Staff_Course', 'Course', 'User')->withPivot('role as Role')
+            ->orderBy('lastname');
     }
 
 

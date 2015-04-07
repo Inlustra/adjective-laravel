@@ -14,22 +14,22 @@
 
                     <p><b>Email</b></p>
 
-                    <p><b>Graduation</b></p>
-
+					@if(Auth::user()->isStudent())
                     <p><b>First Marker</b></p>
 
                     <p><b>Second Marker</b></p></blockquote>
+                    @endif
             </div>
             <div class="col s12 m3 12">
                 <blockquote><p><b>Computing</b></p>
 
                     <p><b>{{ Auth::user()->email }}</b></p>
+					
+					@if(Auth::user()->isStudent())
+                    <p><b>{{$student->Supervisor->fullName  or 'None'}}</b></p>
 
-                    <p><b>2015</b></p>
-
-                    <p><b>Ray Stoneham</b></p>
-
-                    <p><b>Keeran Jameel</b></p></blockquote>
+                    <p><b>{{$student->SecondMarker->fullName  or 'None'}}</b></p></blockquote>
+                    @endif
             </div>
             <div class="col s12 m6 18">
                 <img src="img/user-icon1.jpg" class="circle responsive-img"/>
@@ -40,7 +40,7 @@
 
     <div class="divider"></div>
 
-    <div class="container">
+	<div class="container">
         <div class="row">
             <div class="col s12"><h4><i class="small mdi-communication-message"></i> Latest Messages</h4>
 

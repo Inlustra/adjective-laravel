@@ -41,7 +41,7 @@
                 </div>
             </form>
         </div>
-        {{ Form::open(array('route' => 'admin.course.students.post'))}}
+        {{ Form::open(array('route' => array('admin.course.students.post',$course->id)))}}
         <div id="all" class="col s12">
             <h5>Students correctly assigned.</h5>
 
@@ -256,7 +256,7 @@
         <div class="row">
             <div class="row">
                 <div class="col s5">
-                    <select id="FirstMarker_edit">
+                    <select name="FirstMarker">
                         @foreach($course->staff as $staff)
                             <option value="" selected>No First Marker</option>
                             @foreach($course->staff as $staff)
@@ -267,7 +267,7 @@
                     </select>
                 </div>
                 <div class="input-field col s5">
-                    <select id="SecondMarker_edit">
+                    <select name="SecondMarker">
                         <option value="" selected>No Second Marker</option>
                         @foreach($course->staff as $staff)
                             <option value="{{$staff->id}}">{{$staff->fullName}}</option>

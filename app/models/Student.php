@@ -9,9 +9,9 @@ class Student extends Eloquent {
      * @var string
      */
     protected $table = 'Student';
-    protected $hidden = array('id', 'User', 'Degree');
+    protected $hidden = array('User', 'Degree');
     public function user() {
-        return $this->belongsTo('User','User');
+        return $this->belongsTo('User','User')->orderBy('lastname');
     }
 
     public function degree()

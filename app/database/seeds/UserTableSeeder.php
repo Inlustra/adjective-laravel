@@ -14,7 +14,7 @@ class UserTableSeeder extends Seeder
         $password = Hash::make('test');
         $firstname = 'Thomas';
         $lastname = 'Nairn';
-		$email = $firstname . $lastname . '@adjective.xyz';
+		$email = $firstname .".". $lastname . '@adjective.xyz';
         $user = new User;
         $user->id = '1';
         $user->username = $firstname . '.' . $lastname;
@@ -26,7 +26,7 @@ class UserTableSeeder extends Seeder
 
         $firstname = 'Lukas';
         $lastname = 'Bowden';
-		$email = $firstname . $lastname . '@adjective.xyz';
+		$email = $firstname .".". $lastname . '@adjective.xyz';
         $user = new User;
         $user->id = '2';
         $user->username = $firstname . '.' . $lastname;
@@ -38,7 +38,7 @@ class UserTableSeeder extends Seeder
 
         $firstname = 'Daniel';
         $lastname = 'Bailey';
-		$email = $firstname . $lastname . '@adjective.xyz';
+		$email = $firstname .".". $lastname . '@adjective.xyz';
         $user = new User;
         $user->id = '3';
         $user->username = $firstname . '.' . $lastname;
@@ -50,7 +50,7 @@ class UserTableSeeder extends Seeder
         
         $firstname = 'Richard';
         $lastname = 'Barker';
-		$email = $firstname . $lastname . '@adjective.xyz';
+		$email = $firstname .".". $lastname . '@adjective.xyz';
         $user = new User;
         $user->id = '4';
         $user->username = $firstname . '.' . $lastname;
@@ -62,7 +62,7 @@ class UserTableSeeder extends Seeder
 
         $firstname = 'Lee';
         $lastname = 'Johnson';
-		$email = $firstname . $lastname . '@adjective.xyz';
+		$email = $firstname .".". $lastname . '@adjective.xyz';
         $user = new User;
         $user->id = '5';
         $user->username = $firstname . '.' . $lastname;
@@ -74,7 +74,7 @@ class UserTableSeeder extends Seeder
 
         $firstname = 'Zoe';
         $lastname = 'Luo';
-		$email = $firstname . $lastname . '@adjective.xyz';
+		$email = $firstname .".". $lastname . '@adjective.xyz';
         $user = new User;
         $user->id = '6';
         $user->username = $firstname . '.' . $lastname;
@@ -98,7 +98,7 @@ class UserTableSeeder extends Seeder
 
         $firstname = 'David';
         $lastname = 'Sime';
-		$email = $firstname . $lastname . '@adjective.xyz';
+		$email = $firstname .".". $lastname . '@adjective.xyz';
         $user = new User;
         $user->id = '8';
         $user->username = $firstname . '.' . $lastname;
@@ -123,7 +123,7 @@ class UserTableSeeder extends Seeder
 
         $firstname = 'Keeran';
         $lastname = 'Jamil';
-		$email = $firstname . $lastname . '@adjective.xyz';
+		$email = $firstname .".". $lastname . '@adjective.xyz';
         $user = new User;
         $user->username = $firstname . '.' . $lastname;
         $user->id = '10';
@@ -155,7 +155,7 @@ class UserTableSeeder extends Seeder
 
             $firstname = $firstNames[array_rand($firstNames)];
             $lastname = $lastNames[array_rand($lastNames)];
-			$email = $firstname . $lastname . '@adjective.xyz';
+			$email = $firstname .".". $lastname . '@adjective.xyz';
             $user = new User;
             $user->username = $firstname . '.' . $lastname;
             $user->firstname = $firstname;

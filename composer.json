@@ -6,7 +6,8 @@
 	"type": "project",
 	"require": {
 		"laravel/framework": "4.2.*",
-		"barryvdh/laravel-cors": "0.2.x"
+		"barryvdh/laravel-cors": "0.2.x",
+        "guzzlehttp/guzzle": "~4.0"
 	},
 	"autoload": {
 		"classmap": [

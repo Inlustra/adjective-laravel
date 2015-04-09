@@ -25,7 +25,9 @@ class UserController extends \BaseController
 
     public function students()
     {
-        return View::make('viewstudents', ['students' => User::students()->get()]);
+        $users = User::students()->get();
+
+        return View::make('viewstudents', ['students' => $users]);
     }
 
     public function student($id)
@@ -37,12 +39,25 @@ class UserController extends \BaseController
     {
         $action = Input::get("action") or "";
         $meeting = Meeting::find($id);
+        $user = Adjective::user();
+        $other = $meeting->otherMember($user);
         switch ($action) {
             case "Accept":
                 $meeting->accept(Adjective::user());
                 $meeting->save();
+                Mail::send('emails.meetings.accepted', array('from' => $user, 'meeting' => $meeting),
+                    function ($message) use ($other, $user) {
+                        $message->to($other->email, $other->fullName)
+                            ->subject($user->fullName . " accepted your meeting.");
+                    });
                 break;
             case "Cancel":
+                $meeting->delete();
+                Mail::send('emails.meetings.cancelled', array('from' => $user, 'meeting' => $meeting),
+                    function ($message) use ($other, $user) {
+                        $message->to($other->email, $other->fullName)
+                            ->subject($user->fullName . " cancelled your meeting.");
+                    });
                 break;
         }
         return Redirect::back();

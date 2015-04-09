@@ -107,9 +107,9 @@ class Meeting extends Eloquent
             $student = $student->id;
         }
         if ($student == $user) {
-            return User::find($student);
+            return User::find($this->Staff);
         }
-        return User::find($this->Staff);
+        return User::find($student);
     }
 
     public function isAccepted($user)

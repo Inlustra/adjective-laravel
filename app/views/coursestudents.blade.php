@@ -41,7 +41,7 @@
                 </div>
             </form>
         </div>
-        {{ Form::open(array('route' => array('admin.course.students.post', $course->id)))}}
+        {{ Form::open(array('route' => 'admin.course.students.post'))}}
         <div id="all" class="col s12">
             <h5>Students correctly assigned.</h5>
 
@@ -72,19 +72,19 @@
                     </thead>
                     <tbody>
                     @foreach($course->students as $student)
-                        @if($student->SecondMarker!= null && $student->Supervisor != null)
+                    @if($student['SecondMarker']!= null && $student['Supervisor'] != null)
                             <tr>
                                 <td>
                                     <p>
-                                        <input type="checkbox" id="student-{{$student->id}}"
-                                               value="{{$student->id}}" name="student[]"/>
-                                        <label for="student-{{$student->id}}"></label>
+                                        <input type="checkbox" id="student-{{$student['id']}}"
+                                               value="{{$student['id']}}" name="student[]"/>
+                                        <label for="student-{{$student['id']}}"></label>
                                     </p>
                                 </td>
-                                <td>{{$student->user->fullName}}</td>
-                                <td>{{$student->user->email}}</td>
-                                <td>{{$student->Supervisor->fullName  or 'None'}}</td>
-                                <td>{{$student->SecondMarker->fullName  or 'None'}}</td>
+                                <td>{{$student['user']['fullName']}}</td>
+                                <td>{{$student['user']['email']}}</td>
+                                <td>{{$student['Supervisor']['fullName']  or 'None'}}</td>
+                                <td>{{$student['SecondMarker']['fullName']  or 'None'}}</td>
                                 <td><a href="">Dashboard</a></td>
                             </tr>
                         @endif
@@ -124,19 +124,19 @@
                     </thead>
                     <tbody>
                     @foreach($course->students as $student)
-                        @if($student->SecondMarker!= null && $student->Supervisor == null)
+                        @if($student['SecondMarker']!= null && $student['Supervisor'] == null)
                             <tr>
                                 <td>
                                     <p>
-                                        <input type="checkbox" id="student-{{$student->id}}"
-                                               value="{{$student->id}}" name="student[]"/>
-                                        <label for="student-{{$student->id}}"></label>
+                                        <input type="checkbox" id="student-{{$student['id']}}"
+                                               value="{{$student['id']}}" name="student[]"/>
+                                        <label for="student-{{$student['id']}}"></label>
                                     </p>
                                 </td>
-                                <td>{{$student->user->fullName}}</td>
-                                <td>{{$student->user->email}}</td>
-                                <td>{{$student->Supervisor->fullName  or 'None'}}</td>
-                                <td>{{$student->SecondMarker->fullName  or 'None'}}</td>
+                                <td>{{$student['user']['fullName']}}</td>
+                                <td>{{$student['user']['email']}}</td>
+                                <td>{{$student['Supervisor']['fullName']  or 'None'}}</td>
+                                <td>{{$student['SecondMarker']['fullName']  or 'None'}}</td>
                                 <td><a href="">Dashboard</a></td>
                             </tr>
                         @endif
@@ -177,19 +177,19 @@
                     </thead>
                     <tbody>
                     @foreach($course->students as $student)
-                        @if($student->SecondMarker == null && $student->Supervisor != null)
+                        @if($student['SecondMarker'] == null && $student['Supervisor'] != null)
                             <tr>
                                 <td>
                                     <p>
-                                        <input type="checkbox" id="student-{{$student->id}}"
-                                               value="{{$student->id}}" name="student[]"/>
-                                        <label for="student-{{$student->id}}"></label>
+                                        <input type="checkbox" id="student-{{$student['id']}}"
+                                               value="{{$student['id']}}" name="student[]"/>
+                                        <label for="student-{{$student['id']}}"></label>
                                     </p>
                                 </td>
-                                <td>{{$student->user->fullName}}</td>
-                                <td>{{$student->user->email}}</td>
-                                <td>{{$student->Supervisor->fullName  or 'None'}}</td>
-                                <td>{{$student->SecondMarker->fullName  or 'None'}}</td>
+                                <td>{{$student['user']['fullName']}}</td>
+                                <td>{{$student['user']['email']}}</td>
+                                <td>{{$student['Supervisor']['fullName']  or 'None'}}</td>
+                                <td>{{$student['SecondMarker']['fullName']  or 'None'}}</td>
                                 <td><a href="">Dashboard</a></td>
                             </tr>
                         @endif
@@ -229,19 +229,19 @@
                     </thead>
                     <tbody>
                     @foreach($course->students as $student)
-                        @if($student->SecondMarker == null && $student->Supervisor == null )
+                        @if($student['SecondMarker'] == null && $student['Supervisor'] == null )
                             <tr>
                                 <td>
                                     <p>
-                                        <input type="checkbox" id="student-{{$student->id}}"
-                                               value="{{$student->id}}" name="student[]"/>
-                                        <label for="student-{{$student->id}}"></label>
+                                        <input type="checkbox" id="student-{{$student['id']}}"
+                                               value="{{$student['id']}}" name="student[]"/>
+                                        <label for="student-{{$student['id']}}"></label>
                                     </p>
                                 </td>
-                                <td>{{$student->user->fullName}}</td>
-                                <td>{{$student->user->email}}</td>
-                                <td>{{$student->Supervisor->fullName  or 'None'}}</td>
-                                <td>{{$student->SecondMarker->fullName  or 'None'}}</td>
+                                <td>{{$student['user']['fullName']}}</td>
+                                <td>{{$student['user']['email']}}</td>
+                                <td>{{$student['Supervisor']['fullName']  or 'None'}}</td>
+                                <td>{{$student['SecondMarker']['fullName']  or 'None'}}</td>
                                 <td><a href="">Dashboard</a></td>
                             </tr>
                         @endif
@@ -256,7 +256,7 @@
         <div class="row">
             <div class="row">
                 <div class="col s5">
-                    <select name="FirstMarker" id="FirstMarker_edit">
+                    <select id="FirstMarker_edit">
                         @foreach($course->staff as $staff)
                             <option value="" selected>No First Marker</option>
                             @foreach($course->staff as $staff)
@@ -267,7 +267,7 @@
                     </select>
                 </div>
                 <div class="input-field col s5">
-                    <select name="SecondMarker" id="SecondMarker_edit">
+                    <select id="SecondMarker_edit">
                         <option value="" selected>No Second Marker</option>
                         @foreach($course->staff as $staff)
                             <option value="{{$staff->id}}">{{$staff->fullName}}</option>

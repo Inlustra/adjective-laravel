@@ -14,32 +14,32 @@ class MeetingsTableSeeder extends Seeder
         $students = $course->students()->get();
         foreach ($students as $student) {
             if ($student->Supervisor != null) {
-
+                $staff = User::find($student->Supervisor);
                 $meeting = new Meeting;
                 $meeting->Student = $student->id;
-                $meeting->Staff = User::find($student->Supervisor)->id;
+                $meeting->Staff = $staff->id;
                 $meeting->Course = $course->id;
                 $date = new DateTime();
                 $date->add(new DateInterval('P3D'));
                 $meeting->time = $date;
-                $meeting->agenda = "Meeting requested by supervisor";
+                $meeting->agenda = "Meeting requested by supervisor: ".$staff->fullName;
                 $meeting->accepted_staff = true;
                 $meeting->save();
 
                 $meeting = new Meeting;
                 $meeting->Student = $student->id;
-                $meeting->Staff = User::find($student->Supervisor)->id;
+                $meeting->Staff = $staff->id;
                 $meeting->Course = $course->id;
                 $date = new DateTime();
                 $date->add(new DateInterval('P60D'));
                 $meeting->time = $date;
-                $meeting->agenda = "Meeting requested by student";
+                $meeting->agenda = "Meeting requested by student: ".$student->user->fullName;
                 $meeting->accepted_student = true;
                 $meeting->save();
 
                 $meeting = new Meeting;
                 $meeting->Student = $student->id;
-                $meeting->Staff = User::find($student->Supervisor)->id;
+                $meeting->Staff = $staff->id;
                 $meeting->Course = $course->id;
                 $date = new DateTime();
                 $interval = new DateInterval('P3D');
@@ -55,7 +55,7 @@ class MeetingsTableSeeder extends Seeder
 
                 $meeting = new Meeting;
                 $meeting->Student = $student->id;
-                $meeting->Staff = User::find($student->Supervisor)->id;
+                $meeting->Staff = $staff->id;
                 $meeting->Course = $course->id;
                 $date = new DateTime();
                 $interval = new DateInterval('P3D');

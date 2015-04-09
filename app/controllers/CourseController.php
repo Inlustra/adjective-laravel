@@ -5,13 +5,18 @@ class CourseController extends \BaseController
 
     public function admin($id)
     {
-        $course = Course::find($id)->with('staff')->first();
+        $course = Course::find($id)->with('staff', 'students','students.user')->first();
         $meetings = Meeting::withStaff(Adjective::user(), $course)->sort()->take(5)->get();
         $meetings_count = Meeting::withStaff(Adjective::user(), $course)->sort()->count();
         foreach ($course->students as &$student) {
             $student->Supervisor = User::find($student->Supervisor);
             $student->SecondMarker = User::find($student->SecondMarker);
         }
+        $stu = $course->students->toArray();
+        usort($stu, function ($a, $b) {
+            return strcmp($a["user"]['lastname'], $b["user"]['lastname']);
+        });
+        $course->students = $stu;
         return View::make('course')->with(
             array('course' => $course,
                 'user' => Adjective::user(),
@@ -21,11 +26,16 @@ class CourseController extends \BaseController
 
     public function students($id)
     {
-        $course = Course::find($id)->with('staff')->first();
+        $course = Course::find($id)->with('staff', 'students','students.user')->first();
         foreach ($course->students as &$student) {
             $student->Supervisor = User::find($student->Supervisor);
             $student->SecondMarker = User::find($student->SecondMarker);
         }
+        $stu = $course->students->toArray();
+        usort($stu, function ($a, $b) {
+            return strcmp($a["user"]['lastname'], $b["user"]['lastname']);
+        });
+        $course->students = $stu;
         return View::make('coursestudents')->with(
             array('course' => $course));
     }

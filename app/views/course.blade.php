@@ -105,12 +105,6 @@
                                                     Accept
                                                     <i class="mdi-action-done right"></i>
                                                 </button>
-                                                <button class="btn waves-effect waves-light yellow darken-3"
-                                                        type="submit"
-                                                        name="action" value="Cancel">
-                                                    Change Time
-                                                    <i class="mdi-editor-mode-edit right"></i>
-                                                </button>
                                                 <button class="btn waves-effect waves-light red" type="submit"
                                                         name="action" value="Cancel">
                                                     Cancel
@@ -123,15 +117,8 @@
                                     <div class="collapsible-body">
                                         <div class="row">
                                             <div class="col s12 center-align">
-                                                </br>
-                                                <button class="btn waves-effect waves-light yellow darken-3"
-                                                        type="submit"
-                                                        name="action">
-                                                    Change Time
-                                                    <i class="mdi-editor-mode-edit right"></i>
-                                                </button>
                                                 <button class="btn waves-effect waves-light red" type="submit"
-                                                        name="action">
+                                                        name="action" value="Cancel">
                                                     Cancel
                                                     <i class="mdi-alert-warning right"></i>
                                                 </button>
@@ -143,14 +130,9 @@
                                         <div class="row">
                                             <div class="col s12 center-align">
                                                 </br>
-                                                <button class="btn waves-effect waves-light yellow darken-3"
-                                                        type="submit"
-                                                        name="action">
-                                                    Change Time
-                                                    <i class="mdi-editor-mode-edit right"></i>
-                                                </button>
+                                                
                                                 <button class="btn waves-effect waves-light red" type="submit"
-                                                        name="action">
+                                                        name="action" value="Cancel">
                                                     Cancel
                                                     <i class="mdi-alert-warning right"></i>
                                                 </button>
@@ -171,12 +153,50 @@
 
     @if($user->isStaff())
         <div class="divider"></div>
-
         <br>
         <div class="container">
             <div class="row">
                 <div class="col s12">
-                    <h5>Students</h5>
+                    <h5>My Students</h5>
+
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-striped table-text">
+                            <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>1st Marker</th>
+                                <th>2nd Marker</th>
+                                <th></th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            @foreach($course->students as $student)
+                                @if($student['Supervisor']['id'] ==  Adjective::user()->id
+                                || $student['SecondMarker']['id'] == Adjective::user()->id)
+                                    <tr>
+                                        <td>{{$student['user']['fullName']}}</td>
+                                        <td>{{$student['user']['email']}}</td>
+                                        <td>{{$student['Supervisor']['fullName']  or 'None'}}</td>
+                                        <td>{{$student['SecondMarker']['fullName']  or 'None'}}</td>
+                                        <td>
+                                            {{HTML::linkRoute('admin.imitate', 'Dashboard',
+                                                array($student['user']['id']))}}
+                                        </td>
+                                    </tr>
+                                @endif
+                            @endforeach
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                <div class="col s12">
+                    <h5>Student reports</h5>
 
                     <div class="col s12">
                         <ul class="tabs">
@@ -203,13 +223,13 @@
                                 <tbody>
                                 @foreach($course->students as $student)
                                     <tr>
-                                        <td>{{$student->user->fullName}}</td>
-                                        <td>{{$student->user->email}}</td>
-                                        <td>{{$student->Supervisor->fullName  or 'None'}}</td>
-                                        <td>{{$student->SecondMarker->fullName  or 'None'}}</td>
+                                        <td>{{$student['user']['fullName']}}</td>
+                                        <td>{{$student['user']['email']}}</td>
+                                        <td>{{$student['Supervisor']['fullName']  or 'None'}}</td>
+                                        <td>{{$student['SecondMarker']['fullName']  or 'None'}}</td>
                                         <td>
                                             {{HTML::linkRoute('admin.imitate', 'Dashboard',
-                                                array($student->user->id))}}
+                                                array($student['user']['id']))}}
                                         </td>
                                     </tr>
                                 @endforeach
@@ -232,14 +252,16 @@
                                 </thead>
                                 <tbody>
                                 @foreach($course->students as $student)
-                                    @if($student->Supervisor == null)
+                                    @if($student['Supervisor'] == null)
                                         <tr>
-                                            <td>{{$student->user->fullName}}</td>
-                                            <td>{{$student->user->email}}</td>
-                                            <td>{{$student->Supervisor->fullName  or 'None'}}</td>
-                                            <td>{{$student->SecondMarker->fullName  or 'None'}}</td>
-                                            <td>{{HTML::linkRoute('admin.imitate', 'Dashboard',
-                                                array($student->user->id))}}</td>
+                                            <td>{{$student['user']['fullName']}}</td>
+                                            <td>{{$student['user']['email']}}</td>
+                                            <td>{{$student['Supervisor']['fullName']  or 'None'}}</td>
+                                            <td>{{$student['SecondMarker']['fullName']  or 'None'}}</td>
+                                            <td>
+                                                {{HTML::linkRoute('admin.imitate', 'Dashboard',
+                                                    array($student['user']['id']))}}
+                                            </td>
                                         </tr>
                                     @endif
                                 @endforeach
@@ -263,14 +285,16 @@
                                 </thead>
                                 <tbody>
                                 @foreach($course->students as $student)
-                                    @if($student->SecondMarker == null)
+                                    @if($student['SecondMarker'] == null)
                                         <tr>
-                                            <td>{{$student->user->fullName}}</td>
-                                            <td>{{$student->user->email}}</td>
-                                            <td>{{$student->Supervisor->fullName  or 'None'}}</td>
-                                            <td>{{$student->SecondMarker->fullName  or 'None'}}</td>
-                                            <td>{{HTML::linkRoute('admin.imitate', 'Dashboard',
-                                                array($student->user->id))}}</td>
+                                            <td>{{$student['user']['fullName']}}</td>
+                                            <td>{{$student['user']['email']}}</td>
+                                            <td>{{$student['Supervisor']['fullName']  or 'None'}}</td>
+                                            <td>{{$student['SecondMarker']['fullName']  or 'None'}}</td>
+                                            <td>
+                                                {{HTML::linkRoute('admin.imitate', 'Dashboard',
+                                                    array($student['user']['id']))}}
+                                            </td>
                                         </tr>
                                     @endif
                                 @endforeach
@@ -293,14 +317,16 @@
                                 </thead>
                                 <tbody>
                                 @foreach($course->students as $student)
-                                    @if($student->SecondMarker == null && $student->Supervisor == null )
+                                    @if($student['SecondMarker'] == null && $student['Supervisor'] == null )
                                         <tr>
-                                            <td>{{$student->user->fullName}}</td>
-                                            <td>{{$student->user->email}}</td>
-                                            <td>{{$student->Supervisor->fullName  or 'None'}}</td>
-                                            <td>{{$student->SecondMarker->fullName  or 'None'}}</td>
-                                            <td>{{HTML::linkRoute('admin.imitate', 'Dashboard',
-                                                array($student->user->id))}}</td>
+                                            <td>{{$student['user']['fullName']}}</td>
+                                            <td>{{$student['user']['email']}}</td>
+                                            <td>{{$student['Supervisor']['fullName']  or 'None'}}</td>
+                                            <td>{{$student['SecondMarker']['fullName']  or 'None'}}</td>
+                                            <td>
+                                                {{HTML::linkRoute('admin.imitate', 'Dashboard',
+                                                    array($student['user']['id']))}}
+                                            </td>
                                         </tr>
                                     @endif
                                 @endforeach

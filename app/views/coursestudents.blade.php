@@ -85,7 +85,8 @@
                                 <td>{{$student['user']['email']}}</td>
                                 <td>{{$student['Supervisor']['fullName']  or 'None'}}</td>
                                 <td>{{$student['SecondMarker']['fullName']  or 'None'}}</td>
-                                <td><a href="">Dashboard</a></td>
+                                <td>{{HTML::linkRoute('admin.imitate', 'Dashboard',
+                                                array($student['user']['id']))}}</td>
                             </tr>
                         @endif
                     @endforeach
@@ -137,7 +138,8 @@
                                 <td>{{$student['user']['email']}}</td>
                                 <td>{{$student['Supervisor']['fullName']  or 'None'}}</td>
                                 <td>{{$student['SecondMarker']['fullName']  or 'None'}}</td>
-                                <td><a href="">Dashboard</a></td>
+                                <td>{{HTML::linkRoute('admin.imitate', 'Dashboard',
+                                                array($student['user']['id']))}}</td>
                             </tr>
                         @endif
                     @endforeach
@@ -190,7 +192,8 @@
                                 <td>{{$student['user']['email']}}</td>
                                 <td>{{$student['Supervisor']['fullName']  or 'None'}}</td>
                                 <td>{{$student['SecondMarker']['fullName']  or 'None'}}</td>
-                                <td><a href="">Dashboard</a></td>
+                                <td>{{HTML::linkRoute('admin.imitate', 'Dashboard',
+                                                array($student['user']['id']))}}</td>
                             </tr>
                         @endif
                     @endforeach
